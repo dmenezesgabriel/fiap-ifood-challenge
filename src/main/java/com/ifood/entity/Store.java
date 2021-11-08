@@ -13,7 +13,7 @@ public class Store implements Serializable {
     protected int id;
     protected String name;
     protected String companyName;
-    protected int cnpj;
+    protected long cnpj;
     protected long phone;
     protected Specialty specialty;
     protected Contact contact;
@@ -24,9 +24,12 @@ public class Store implements Serializable {
     public Store() {
     }
 
-    public Store(int id, String name, String companyName, int cnpj, long phone, Specialty specialty, Contact contact,
+    public Store(int id, String name, String companyName, long cnpj, long phone, Specialty specialty, Contact contact,
             Address address, Responsible responsible, Plan plan) {
         this.id = id;
+        /**
+         * Name that will show at the APP
+         */
         this.name = name;
         this.companyName = companyName;
         this.cnpj = cnpj;
@@ -62,11 +65,11 @@ public class Store implements Serializable {
         this.companyName = companyName;
     }
 
-    public int getCnpj() {
+    public long getCnpj() {
         return this.cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(long cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -116,56 +119,6 @@ public class Store implements Serializable {
 
     public void setPlan(Plan plan) {
         this.plan = plan;
-    }
-
-    public Store id(int id) {
-        setId(id);
-        return this;
-    }
-
-    public Store name(String name) {
-        setName(name);
-        return this;
-    }
-
-    public Store companyName(String companyName) {
-        setCompanyName(companyName);
-        return this;
-    }
-
-    public Store cnpj(int cnpj) {
-        setCnpj(cnpj);
-        return this;
-    }
-
-    public Store phone(int phone) {
-        setPhone(phone);
-        return this;
-    }
-
-    public Store specialty(Specialty specialty) {
-        setSpecialty(specialty);
-        return this;
-    }
-
-    public Store contact(Contact contact) {
-        setContact(contact);
-        return this;
-    }
-
-    public Store address(Address address) {
-        setAddress(address);
-        return this;
-    }
-
-    public Store responsible(Responsible responsible) {
-        setResponsible(responsible);
-        return this;
-    }
-
-    public Store plan(Plan plan) {
-        setPlan(plan);
-        return this;
     }
 
     @Override
