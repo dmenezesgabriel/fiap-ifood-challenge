@@ -17,3 +17,11 @@ Which are the most relevant data for the partner restaurant provide at Ifood Pla
 ## Data Model
 
 ![Data Model](diagrams/relational-model.drawio.svg)
+
+## DOD
+
+- [ ] Understanding of Business Model
+- [ ] Front-end
+- [ ] Data Modeling
+- [ ] Data Persistence
+- [ ] 3 Insights from data
