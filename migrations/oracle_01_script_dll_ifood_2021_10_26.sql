@@ -33,6 +33,7 @@ NOCYCLE;
 -------------------------------------------------------------------------------
 CREATE TABLE T_IFD_ENDERECO (
   cd_endereco NUMBER(5) NOT NULL,
+  cod_postal NUMBER(8) NOT NULL,
   nm_estado VARCHAR2(60) NOT NULL,
   nm_cidade VARCHAR(60) NOT NULL,
   nm_bairro VARCHAR(60) NOT NULL,

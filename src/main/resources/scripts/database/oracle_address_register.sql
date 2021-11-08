@@ -1,5 +1,6 @@
 INSERT INTO T_IFD_ENDERECO (
 	cd_endereco,
+  cd_cep,
 	nm_estado,
   nm_cidade,
   nm_bairro,
@@ -9,6 +10,7 @@ INSERT INTO T_IFD_ENDERECO (
 )
 VALUES (
   SEQ_IFD_ENDERECO.NEXTVAL,
+  ?,
   ?,
   ?,
   ?,

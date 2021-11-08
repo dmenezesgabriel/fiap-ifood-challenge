@@ -1,5 +1,5 @@
 UPDATE T_IFD_ENDERECO
-  SET nm_estado = ?,
+  SET cd_cep = ?,
 	nm_estado = ?,
   nm_cidade = ?,
   nm_bairro = ?,

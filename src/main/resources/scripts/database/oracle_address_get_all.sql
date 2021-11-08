@@ -1,5 +1,6 @@
 SELECT
 	cd_endereco,
+  cd_cep,
 	nm_estado,
   nm_cidade,
   nm_bairro,
