@@ -1,0 +1,2 @@
+DELETE FROM T_IFD_RESPONSAVEL
+  WHERE cd_responsavel = ?
