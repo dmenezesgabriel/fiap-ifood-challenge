@@ -1,0 +1,2 @@
+DELETE FROM T_IFD_PLANO
+  WHERE cd_plano = ?
