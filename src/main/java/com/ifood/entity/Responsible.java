@@ -14,13 +14,13 @@ public class Responsible implements Serializable {
 
     protected int id;
     protected String name;
-    protected int cpf;
-    protected int rg;
+    protected long cpf;
+    protected long rg;
 
     public Responsible() {
     }
 
-    public Responsible(int id, String name, int cpf, int rg) {
+    public Responsible(int id, String name, long cpf, long rg) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -43,19 +43,19 @@ public class Responsible implements Serializable {
         this.name = name;
     }
 
-    public int getCpf() {
+    public long getCpf() {
         return this.cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
-    public int getRg() {
+    public long getRg() {
         return this.rg;
     }
 
-    public void setRg(int rg) {
+    public void setRg(long rg) {
         this.rg = rg;
     }
 
