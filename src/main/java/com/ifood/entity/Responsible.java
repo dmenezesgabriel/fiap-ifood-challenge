@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class which abstract Responsible
+ * Class which abstract Store's Legal Responsible
  *
  * @author Gabriel Menezes
  * @version 1.0

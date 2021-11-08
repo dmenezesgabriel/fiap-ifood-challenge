@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class which abstract Contacts
+ * Class which abstract Store's Contacts
  *
  * @author Gabriel Menezes
  * @version 1.0

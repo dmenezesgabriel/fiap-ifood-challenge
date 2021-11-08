@@ -1,2 +1,0 @@
-DELETE FROM T_IFD_USUARIO
-  WHERE cd_usuario = ?

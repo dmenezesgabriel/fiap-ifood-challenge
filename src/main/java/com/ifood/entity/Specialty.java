@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class which abstract Specialty
+ * Class which abstract Store's Specialty
  *
  * @author Gabriel Menezes
  * @version 1.0

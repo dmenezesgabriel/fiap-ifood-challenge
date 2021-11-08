@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class which abstract Plans
+ * Class which abstract Store's Plans
  *
  * @author Gabriel Menezes
  * @version 1.0

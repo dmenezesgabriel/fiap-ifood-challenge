@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Class which abstract Addresses
+ * Class which abstract Store's Addresses
  *
  * @author Gabriel Menezes
  * @version 1.0

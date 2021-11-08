@@ -1,6 +1,6 @@
 package com.ifood.factory;
 
-import com.ifood.dao.UserDAO;
+import com.ifood.dao.SpecialtyDAO;
 
 public abstract class DAOFactory {
 
@@ -21,6 +21,6 @@ public abstract class DAOFactory {
         }
     }
 
-    public abstract UserDAO getUserDAO();
+    public abstract SpecialtyDAO getUserDAO();
 
 }

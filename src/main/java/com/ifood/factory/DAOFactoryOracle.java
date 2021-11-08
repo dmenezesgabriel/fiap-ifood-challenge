@@ -1,12 +1,12 @@
 package com.ifood.factory;
 
-import com.ifood.dao.UserDAO;
-import com.ifood.dao.UserDAOImplOracle;
+import com.ifood.dao.SpecialtyDAO;
+import com.ifood.dao.SpecialtyDAOImplOracle;
 
 public class DAOFactoryOracle extends DAOFactory {
 
     @Override
-    public UserDAO getUserDAO() {
-        return new UserDAOImplOracle();
+    public SpecialtyDAO getUserDAO() {
+        return new SpecialtyDAOImplOracle();
     }
 }

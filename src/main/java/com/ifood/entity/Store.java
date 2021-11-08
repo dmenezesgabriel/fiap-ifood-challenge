@@ -3,6 +3,12 @@ package com.ifood.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Class which abstract Stores
+ *
+ * @author Gabriel Menezes
+ * @version 1.0
+ */
 public class Store implements Serializable {
     protected int id;
     protected String name;
