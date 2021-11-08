@@ -1,6 +1,5 @@
 package com.ifood.dao;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -13,28 +12,24 @@ import com.ifood.entity.Specialty;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
 
-import oracle.jdbc.OracleTypes;
-
 public class SpecialtyDAOImplOracle implements SpecialtyDAO {
     private Connection connection;
 
     @Override
-    public int register(Specialty specialty) {
-        CallableStatement stmt = null;
+    public boolean register(Specialty specialty) {
+        PreparedStatement stmt = null;
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
             String sql = Query.fileToString("oracle_specialty_register.sql");
-            stmt = connection.prepareCall(sql);
+            stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, specialty.getName());
-            stmt.registerOutParameter(2, OracleTypes.NUMBER);
             stmt.executeUpdate();
-            int insertedID = stmt.getInt(2);
-            return insertedID;
+            return true;
         } catch (SQLException error) {
             error.printStackTrace();
-            return 0;
+            return false;
         } finally {
             try {
                 stmt.close();

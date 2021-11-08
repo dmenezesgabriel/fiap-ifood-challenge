@@ -10,7 +10,7 @@ import java.util.List;
 import com.ifood.entity.Specialty;
 
 public interface SpecialtyDAO {
-    int register(Specialty specialty);
+    boolean register(Specialty specialty);
 
     List<Specialty> getAll();
 

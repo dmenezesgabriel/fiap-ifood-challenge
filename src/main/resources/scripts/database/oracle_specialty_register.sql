@@ -1,4 +1,3 @@
-BEGIN
 INSERT INTO T_IFD_ESPECIALIDADE (
   cd_especialidade,
   nm_especialidade
@@ -8,5 +7,3 @@ VALUES (
   ?,
   ?
   )
-RETURNING cd_especialidade INTO ?
-END
