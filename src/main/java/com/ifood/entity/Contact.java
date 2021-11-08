@@ -15,12 +15,12 @@ public class Contact implements Serializable {
     protected int id;
     protected String name;
     protected String email;
-    protected int phone;
+    protected long phone;
 
     public Contact() {
     }
 
-    public Contact(int id, String name, String email, int phone) {
+    public Contact(int id, String name, String email, long phone) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -51,11 +51,11 @@ public class Contact implements Serializable {
         this.email = email;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return this.phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 

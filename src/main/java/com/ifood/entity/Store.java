@@ -14,7 +14,7 @@ public class Store implements Serializable {
     protected String name;
     protected String companyName;
     protected int cnpj;
-    protected int phone;
+    protected long phone;
     protected Specialty specialty;
     protected Contact contact;
     protected Address address;
@@ -24,7 +24,7 @@ public class Store implements Serializable {
     public Store() {
     }
 
-    public Store(int id, String name, String companyName, int cnpj, int phone, Specialty specialty, Contact contact,
+    public Store(int id, String name, String companyName, int cnpj, long phone, Specialty specialty, Contact contact,
             Address address, Responsible responsible, Plan plan) {
         this.id = id;
         this.name = name;
@@ -70,11 +70,11 @@ public class Store implements Serializable {
         this.cnpj = cnpj;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return this.phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
