@@ -16,6 +16,8 @@ Which are the most relevant data for the partner restaurant provide at Ifood Pla
 
 ## Data Model
 
+Star Schema _WANNABE_
+
 ![Data Model](diagrams/relational-model.drawio.svg)
 
 ## DOD
