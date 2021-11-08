@@ -99,46 +99,6 @@ public class Address implements Serializable {
         this.adjunct = adjunct;
     }
 
-    public Address id(int id) {
-        setId(id);
-        return this;
-    }
-
-    public Address postalCode(int postalCode) {
-        setPostalCode(postalCode);
-        return this;
-    }
-
-    public Address state(String state) {
-        setState(state);
-        return this;
-    }
-
-    public Address city(String city) {
-        setCity(city);
-        return this;
-    }
-
-    public Address district(String district) {
-        setDistrict(district);
-        return this;
-    }
-
-    public Address address(String address) {
-        setAddress(address);
-        return this;
-    }
-
-    public Address number(int number) {
-        setNumber(number);
-        return this;
-    }
-
-    public Address adjunct(String adjunct) {
-        setAdjunct(adjunct);
-        return this;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
