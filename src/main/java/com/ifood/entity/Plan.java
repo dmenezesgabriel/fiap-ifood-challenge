@@ -12,6 +12,7 @@ import java.util.Objects;
 public class Plan implements Serializable {
     protected int id;
     protected String name;
+    protected String description;
     protected double commission;
     protected double tax;
     protected double price;
@@ -19,9 +20,10 @@ public class Plan implements Serializable {
     public Plan() {
     }
 
-    public Plan(int id, String name, double commission, double tax, double price) {
+    public Plan(int id, String name, String description, double commission, double tax, double price) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.commission = commission;
         this.tax = tax;
         this.price = price;
@@ -41,6 +43,14 @@ public class Plan implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getCommission() {
@@ -77,6 +87,11 @@ public class Plan implements Serializable {
         return this;
     }
 
+    public Plan description(String description) {
+        setDescription(description);
+        return this;
+    }
+
     public Plan commission(double commission) {
         setCommission(commission);
         return this;
@@ -100,19 +115,20 @@ public class Plan implements Serializable {
             return false;
         }
         Plan plan = (Plan) o;
-        return id == plan.id && Objects.equals(name, plan.name) && commission == plan.commission && tax == plan.tax
-                && price == plan.price;
+        return id == plan.id && Objects.equals(name, plan.name) && Objects.equals(description, plan.description)
+                && commission == plan.commission && tax == plan.tax && price == plan.price;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, commission, tax, price);
+        return Objects.hash(id, name, description, commission, tax, price);
     }
 
     @Override
     public String toString() {
-        return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", commission='" + getCommission() + "'"
-                + ", tax='" + getTax() + "'" + ", price='" + getPrice() + "'" + "}";
+        return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", description='" + getDescription() + "'"
+                + ", commission='" + getCommission() + "'" + ", tax='" + getTax() + "'" + ", price='" + getPrice() + "'"
+                + "}";
     }
 
 }
