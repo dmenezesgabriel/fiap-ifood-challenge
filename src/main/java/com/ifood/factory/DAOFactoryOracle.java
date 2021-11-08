@@ -6,7 +6,7 @@ import com.ifood.dao.SpecialtyDAOImplOracle;
 public class DAOFactoryOracle extends DAOFactory {
 
     @Override
-    public SpecialtyDAO getUserDAO() {
+    public SpecialtyDAO getSpecialtyDAO() {
         return new SpecialtyDAOImplOracle();
     }
 }

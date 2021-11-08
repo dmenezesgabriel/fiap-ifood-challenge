@@ -21,6 +21,6 @@ public abstract class DAOFactory {
         }
     }
 
-    public abstract SpecialtyDAO getUserDAO();
+    public abstract SpecialtyDAO getSpecialtyDAO();
 
 }
