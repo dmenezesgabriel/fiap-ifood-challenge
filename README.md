@@ -20,8 +20,8 @@ Which are the most relevant data for the partner restaurant provide at Ifood Pla
 
 ## DOD
 
-- [ ] Understanding of Business Model
+- [x] Understanding of Business Model
+- [x] Data Modeling
+- [ ] Data Persistence (CRUD)
 - [ ] Front-end
-- [ ] Data Modeling
-- [ ] Data Persistence
 - [ ] 3 Insights from data
