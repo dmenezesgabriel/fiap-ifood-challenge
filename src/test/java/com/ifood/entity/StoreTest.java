@@ -55,5 +55,9 @@ public class StoreTest {
         assertTrue(store.getCnpj() == 12123123123412L);
         assertTrue(store.getPhone() == 1198765432L);
         assertTrue(specialty.equals(store.getSpecialty()));
+        assertTrue(contact.equals(store.getContact()));
+        assertTrue(address.equals(store.getAddress()));
+        assertTrue(responsible.equals(store.getResponsible()));
+        assertTrue(plan.equals(store.getPlan()));
     }
 }
