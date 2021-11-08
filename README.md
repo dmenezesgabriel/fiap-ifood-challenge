@@ -20,6 +20,10 @@ Star Schema _WANNABE_
 
 ![Data Model](diagrams/relational-model.drawio.svg)
 
+## Views
+
+![Data Model](wireframe/views.png)
+
 ## DOD
 
 - [x] Understanding of Business Model
