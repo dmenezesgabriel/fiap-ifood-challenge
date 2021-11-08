@@ -1,0 +1,2 @@
+DELETE FROM T_IFD_LOJA
+  WHERE cd_loja = ?
