@@ -1,2 +1,0 @@
-DELETE FROM T_IFD_ESPECIALIDADE
-  WHERE cd_especialidade = ?
