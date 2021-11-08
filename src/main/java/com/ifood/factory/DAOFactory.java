@@ -1,6 +1,10 @@
 package com.ifood.factory;
 
 import com.ifood.dao.SpecialtyDAO;
+import com.ifood.dao.AddressDAO;
+import com.ifood.dao.ContactDAO;
+import com.ifood.dao.PlanDAO;
+import com.ifood.dao.ResponsibleDAO;
 
 public abstract class DAOFactory {
 
@@ -22,5 +26,13 @@ public abstract class DAOFactory {
     }
 
     public abstract SpecialtyDAO getSpecialtyDAO();
+
+    public abstract PlanDAO getPlanDAO();
+
+    public abstract ContactDAO getContactDAO();
+
+    public abstract AddressDAO getAddressDAO();
+
+    public abstract ResponsibleDAO getResponsibleDAO();
 
 }
