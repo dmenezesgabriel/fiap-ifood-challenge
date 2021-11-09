@@ -48,8 +48,9 @@ Star Schema _WANNABE_
 
 _Me, myself and I_
 
-## TODO
+## TODOs & Technical Debts
 
 - [ ] Create a Logging Factory
 - [ ] Use Mocking for tests
 - [ ] Use a in Memory database for tests?
+- [ ] **Change** Address.address to Address.something
