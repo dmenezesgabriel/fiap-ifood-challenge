@@ -25,9 +25,10 @@ public class PlanDAOImplOracle implements PlanDAO {
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, plan.getName());
-            stmt.setDouble(2, plan.getCommission());
-            stmt.setDouble(3, plan.getTax());
-            stmt.setDouble(4, plan.getPrice());
+            stmt.setString(2, plan.getDescription());
+            stmt.setDouble(3, plan.getCommission());
+            stmt.setDouble(4, plan.getTax());
+            stmt.setDouble(5, plan.getPrice());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -53,10 +54,11 @@ public class PlanDAOImplOracle implements PlanDAO {
 
             // Set values
             stmt.setString(1, plan.getName());
-            stmt.setDouble(2, plan.getCommission());
-            stmt.setDouble(3, plan.getTax());
-            stmt.setDouble(4, plan.getPrice());
-            stmt.setInt(5, plan.getId());
+            stmt.setString(2, plan.getDescription());
+            stmt.setDouble(3, plan.getCommission());
+            stmt.setDouble(4, plan.getTax());
+            stmt.setDouble(5, plan.getPrice());
+            stmt.setInt(6, plan.getId());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -161,11 +163,11 @@ public class PlanDAOImplOracle implements PlanDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_seq_currval.sql");
+            String sql = Query.fileToString("oracle_plan_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {
-                id = result.getInt("CURRVAL");
+                id = result.getInt("last_id");
             }
         } catch (SQLException error) {
             error.printStackTrace();

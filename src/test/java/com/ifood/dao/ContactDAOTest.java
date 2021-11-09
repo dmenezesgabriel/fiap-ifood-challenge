@@ -14,7 +14,7 @@ public class ContactDAOTest {
 
     @Test
     public void shouldAnswerWithTrue() {
-        logger.info("Testing Speciality DAO Class");
+        logger.info("Testing Contact DAO Class");
         ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getContactDAO());
         Contact contact = new Contact();
         contact.setName("Gabriel");

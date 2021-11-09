@@ -1,4 +1,4 @@
-INSERT INTO T_IFD_ESPECIALIDADE (
+INSERT INTO T_IFD_PLANO (
   cd_plano,
   nm_plano,
   ds_plano,

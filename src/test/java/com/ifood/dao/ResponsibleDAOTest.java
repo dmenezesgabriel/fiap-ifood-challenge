@@ -14,7 +14,7 @@ public class ResponsibleDAOTest {
 
     @Test
     public void shouldAnswerWithTrue() {
-        logger.info("Testing Speciality DAO Class");
+        logger.info("Testing Responsible DAO Class");
         ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getResponsibleDAO());
         Responsible responsible = new Responsible();
         responsible.setName("João");
