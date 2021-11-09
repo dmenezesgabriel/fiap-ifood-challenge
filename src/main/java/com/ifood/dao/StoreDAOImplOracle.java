@@ -8,6 +8,11 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.ifood.entity.Address;
+import com.ifood.entity.Contact;
+import com.ifood.entity.Plan;
+import com.ifood.entity.Responsible;
+import com.ifood.entity.Specialty;
 import com.ifood.entity.Store;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
@@ -98,13 +103,44 @@ public class StoreDAOImplOracle implements StoreDAO {
                 String companyName = result.getString("ds_razao_social");
                 long cnpj = result.getLong("nr_cnpj");
                 long phone = result.getLong("nr_telefone");
-                int specialty = result.getInt("cd_especialidade");
-                int contact = result.getInt("cd_contato");
-                int address = result.getInt("cd_responsavel");
-                int responsible = result.getInt("cd_plano");
-                int plan = result.getInt("dt_criacao");
-                Store store = new Store(id, name, companyName, cnpj, phone, specialty, contact, address, responsible,
-                        plan);
+                // Address
+                int addressId = result.getInt("cd_endereco");
+                int postalCode = result.getInt("cd_cep");
+                String state = result.getString("nm_estado");
+                String city = result.getString("nm_cidade");
+                String district = result.getString("nm_bairro");
+                String description = result.getString("ds_endereco");
+                int number = result.getInt("nr_numero");
+                String adjunct = result.getString("ds_complemento");
+                Address addressObj = new Address(addressId, postalCode, state, city, district, description, number,
+                        adjunct);
+                // Contact
+                int contactId = result.getInt("cd_contato");
+                String contactName = result.getString("nm_contato");
+                String email = result.getString("ds_email");
+                long contactPhone = result.getLong("nr_celular");
+                Contact contactObj = new Contact(contactId, contactName, email, contactPhone);
+                // Plan
+                int planId = result.getInt("cd_plano");
+                String planName = result.getString("nm_plano");
+                String planDescription = result.getString("ds_plano");
+                double commission = result.getDouble("vl_comissao");
+                double tax = result.getDouble("vl_taxa");
+                double price = result.getDouble("vl_preco");
+                Plan planObj = new Plan(planId, planName, planDescription, commission, tax, price);
+                // Responsible
+                int responsibleId = result.getInt("cd_responsavel");
+                String responsibleName = result.getString("nm_responsavel");
+                long cpf = result.getLong("nr_cpf");
+                long rg = result.getLong("nr_rg");
+                Responsible responsibleObj = new Responsible(responsibleId, responsibleName, cpf, rg);
+                // Specialty
+                int specialtyId = result.getInt("cd_especialidade");
+                String specialtyName = result.getString("nm_especialidade");
+                Specialty specialtyObj = new Specialty(specialtyId, specialtyName);
+
+                Store store = new Store(id, name, companyName, cnpj, phone, specialtyObj, contactObj, addressObj,
+                        responsibleObj, planObj);
                 storeList.add(store);
             }
         } catch (SQLException error) {
@@ -132,9 +168,49 @@ public class StoreDAOImplOracle implements StoreDAO {
             stmt.setInt(1, storeId);
             result = stmt.executeQuery();
             if (result.next()) {
-                int id = result.getInt("cd_especialidade");
-                String name = result.getString("nm_especialidade");
-                store = new Store(id, name);
+                int id = result.getInt("cd_loja");
+                String name = result.getString("nm_loja");
+                String companyName = result.getString("ds_razao_social");
+                long cnpj = result.getLong("nr_cnpj");
+                long phone = result.getLong("nr_telefone");
+                // Address
+                int addressId = result.getInt("cd_endereco");
+                int postalCode = result.getInt("cd_cep");
+                String state = result.getString("nm_estado");
+                String city = result.getString("nm_cidade");
+                String district = result.getString("nm_bairro");
+                String description = result.getString("ds_endereco");
+                int number = result.getInt("nr_numero");
+                String adjunct = result.getString("ds_complemento");
+                Address addressObj = new Address(addressId, postalCode, state, city, district, description, number,
+                        adjunct);
+                // Contact
+                int contactId = result.getInt("cd_contato");
+                String contactName = result.getString("nm_contato");
+                String email = result.getString("ds_email");
+                long contactPhone = result.getLong("nr_celular");
+                Contact contactObj = new Contact(contactId, contactName, email, contactPhone);
+                // Plan
+                int planId = result.getInt("cd_plano");
+                String planName = result.getString("nm_plano");
+                String planDescription = result.getString("ds_plano");
+                double commission = result.getDouble("vl_comissao");
+                double tax = result.getDouble("vl_taxa");
+                double price = result.getDouble("vl_preco");
+                Plan planObj = new Plan(planId, planName, planDescription, commission, tax, price);
+                // Responsible
+                int responsibleId = result.getInt("cd_responsavel");
+                String responsibleName = result.getString("nm_responsavel");
+                long cpf = result.getLong("nr_cpf");
+                long rg = result.getLong("nr_rg");
+                Responsible responsibleObj = new Responsible(responsibleId, responsibleName, cpf, rg);
+                // Specialty
+                int specialtyId = result.getInt("cd_especialidade");
+                String specialtyName = result.getString("nm_especialidade");
+                Specialty specialtyObj = new Specialty(specialtyId, specialtyName);
+
+                store = new Store(id, name, companyName, cnpj, phone, specialtyObj, contactObj, addressObj,
+                        responsibleObj, planObj);
             }
         } catch (SQLException error) {
             error.printStackTrace();

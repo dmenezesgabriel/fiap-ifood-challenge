@@ -120,10 +120,10 @@ public class PlanDAOImplOracle implements PlanDAO {
                 int id = result.getInt("cd_plano");
                 String name = result.getString("nm_plano");
                 String description = result.getString("ds_plano");
-                double comissao = result.getDouble("vl_comissao");
-                double taxa = result.getDouble("vl_taxa");
-                double preco = result.getDouble("vl_preco");
-                plan = new Plan(id, name, description, comissao, taxa, preco);
+                double commission = result.getDouble("vl_comissao");
+                double tax = result.getDouble("vl_taxa");
+                double price = result.getDouble("vl_preco");
+                plan = new Plan(id, name, description, commission, tax, price);
             }
         } catch (SQLException error) {
             error.printStackTrace();
