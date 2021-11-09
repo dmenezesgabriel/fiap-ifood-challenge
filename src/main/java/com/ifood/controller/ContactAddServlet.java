@@ -2,8 +2,6 @@ package com.ifood.controller;
 
 import java.io.IOException;
 import java.util.logging.Logger;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

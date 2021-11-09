@@ -37,6 +37,11 @@ Star Schema _WANNABE_
 
 ![Data Model](wireframe/views.png)
 
+## Database Properties
+
+- **prod**: src\main\resources\db.properties
+- **test**: src\test\resources\db.properties
+
 ## DOD
 
 - [x] Understanding of Business Model

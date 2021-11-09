@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,32 +10,21 @@
   <body>
     <div class="container">
       <hr />
-      <h2>Cadastro de Produto</h2>
+      <h2>Cadastre sua loja</h2>
 
-      <form action="registeruser" method="post">
+      <form action="registercontact" method="post">
         <fieldset>
           <div>
             <label for="userName">Nome</label>
             <input type="text" name="name" id="userName" />
           </div>
           <div>
-            <label for="birthDate">Data de Nascimento</label>
-            <input type="date" name="birthDate" id="birthDate" />
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" />
           </div>
           <div>
-            <label for="gender">Gênero</label>
-            <select name="gender" id="gender">
-              <option value="Masculino">Masculino</option>
-              <option value="Feminino">Feminino</option>
-            </select>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div>
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password" />
+            <label for="phone">Celular</label>
+            <input type="tel" required="required" maxlength="15" name="phone" />
           </div>
           <input type="submit" value="Salvar" />
         </fieldset>
