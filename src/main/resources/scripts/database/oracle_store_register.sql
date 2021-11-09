@@ -8,7 +8,7 @@ INSERT INTO T_IFD_LOJA (
   cd_contato,
   cd_endereco,
   cd_responsavel,
-  cd_plano,
+  cd_plano
 )
 VALUES (
   SEQ_IFD_LOJA.NEXTVAL,

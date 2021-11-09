@@ -2,6 +2,8 @@ package com.ifood.factory;
 
 import com.ifood.dao.SpecialtyDAO;
 import com.ifood.dao.SpecialtyDAOImplOracle;
+import com.ifood.dao.StoreDAO;
+import com.ifood.dao.StoreDAOImplOracle;
 import com.ifood.dao.AddressDAO;
 import com.ifood.dao.AddressDAOImplOracle;
 import com.ifood.dao.ContactDAO;
@@ -36,5 +38,10 @@ public class DAOFactoryOracle extends DAOFactory {
     @Override
     public ContactDAO getContactDAO() {
         return new ContactDAOImplOracle();
+    }
+
+    @Override
+    public StoreDAO getStoreDAO() {
+        return new StoreDAOImplOracle();
     }
 }

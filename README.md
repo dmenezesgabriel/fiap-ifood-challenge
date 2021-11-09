@@ -54,3 +54,4 @@ _Me, myself and I_
 - [ ] Use Mocking for tests
 - [ ] Use a in Memory database for tests?
 - [ ] **Change** Address.address to Address.something
+- [ ] Add setDescription to StoreTest at Entities Test
