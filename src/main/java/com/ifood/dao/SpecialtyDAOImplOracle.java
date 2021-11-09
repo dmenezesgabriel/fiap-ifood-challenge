@@ -147,11 +147,11 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_seq_currval.sql.sql");
+            String sql = Query.fileToString("oracle_specialty_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {
-                id = result.getInt("CURRVAL");
+                id = result.getInt("last_id");
             }
         } catch (SQLException error) {
             error.printStackTrace();
