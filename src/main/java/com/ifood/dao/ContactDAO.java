@@ -19,4 +19,6 @@ public interface ContactDAO {
     boolean update(Contact contact);
 
     boolean delete(int id);
+
+    int getLastId();
 }

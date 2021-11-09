@@ -19,4 +19,6 @@ public interface AddressDAO {
     boolean update(Address address);
 
     boolean delete(int id);
+
+    int getLastId();
 }

@@ -19,4 +19,6 @@ public interface PlanDAO {
     boolean update(Plan plan);
 
     boolean delete(int id);
+
+    int getLastId();
 }

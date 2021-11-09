@@ -19,4 +19,6 @@ public interface SpecialtyDAO {
     boolean update(Specialty specialty);
 
     boolean delete(int id);
+
+    int getLastId();
 }

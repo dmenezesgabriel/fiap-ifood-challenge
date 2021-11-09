@@ -153,4 +153,30 @@ public class PlanDAOImplOracle implements PlanDAO {
             return false;
         }
     }
+
+    @Override
+    public int getLastId() {
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+        int id = 0;
+        try {
+            connection = ConnectionManager.getInstance().getConnection();
+            String sql = Query.fileToString("oracle_plan_seq_currval.sql");
+            stmt = connection.prepareStatement(sql);
+            result = stmt.executeQuery();
+            if (result.next()) {
+                id = result.getInt("CURRVAL");
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException error) {
+                error.printStackTrace();
+            }
+        }
+        return id;
+    }
 }

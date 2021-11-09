@@ -19,4 +19,6 @@ public interface ResponsibleDAO {
     boolean update(Responsible responsible);
 
     boolean delete(int id);
+
+    int getLastId();
 }
