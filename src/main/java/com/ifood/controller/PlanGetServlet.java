@@ -1,6 +1,7 @@
 package com.ifood.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -11,12 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ifood.dao.PlanDAO;
+import com.ifood.entity.Plan;
 import com.ifood.factory.DAOFactory;
 
 /**
  * Servlet implementation class PlanServlet
  */
-@WebServlet(name = "getPlan", urlPatterns = { "/getplan" })
+@WebServlet(name = "getPlan", urlPatterns = { "/getplan", "/choose-plan.jsp" })
 public class PlanGetServlet extends HttpServlet {
     Logger logger = java.util.logging.Logger.getLogger(this.getClass().getName());
 
@@ -29,7 +31,8 @@ public class PlanGetServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getPlanDAO());
-        logger.info("" + planDAO.getAll());
+        List<Plan> planList = planDAO.getAll();
+        System.out.println("" + planList);
         // request.setAttribute("plans", planList);
         // request.getRequestDispatcher("/choose-plan.jsp").forward(request, response);
     }

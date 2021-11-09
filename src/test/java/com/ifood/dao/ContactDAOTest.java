@@ -32,6 +32,7 @@ public class ContactDAOTest {
         assertTrue(correct);
         logger.info("Testing getAll");
         List<Contact> contactList = contactDAO.getAll();
+        logger.info("" + contactDAO.getAll());
         assertTrue(contactList.get(contactList.size() - 1).equals(contactRegistered));
         contactRegistered.setName("José");
         contactRegistered.setEmail("replace@example.com");

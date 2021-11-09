@@ -77,9 +77,9 @@ CREATE TABLE T_IFD_PLANO (
   cd_plano NUMBER(5) NOT NULL,
   nm_plano VARCHAR2(60) NOT NULL,
   ds_plano VARCHAR2(250) NOT NULL,
-  vl_comissao NUMBER(4) NOT NULL,
-  vl_taxa NUMBER(4) NOT NULL,
-  vl_preco NUMBER(4) NOT NULL,
+  vl_comissao FLOAT(5) NOT NULL,
+  vl_taxa FLOAT(5) NOT NULL,
+  vl_preco FLOAT(5) NOT NULL,
   dt_criacao TIMESTAMP DEFAULT SYSTIMESTAMP NOT NULL
 );
 
@@ -176,7 +176,7 @@ VALUES (
   'Plano Básico',
   0.12,
   0.035,
-  100
+  100.0
   );
 INSERT INTO T_IFD_PLANO (
   cd_plano,
@@ -190,9 +190,9 @@ VALUES (
   SEQ_IFD_PLANO.NEXTVAL,
   'Entrega',
   'Plano Entrega',
-  0.23,
-  0.035,
-  130
+  0.13,
+  0.036,
+  101.0
   );
 INSERT INTO T_IFD_ESPECIALIDADE (
   cd_especialidade,
