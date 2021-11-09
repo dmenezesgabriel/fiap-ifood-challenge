@@ -21,7 +21,7 @@ public class AddressDAOImplOracle implements AddressDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_register.sql");
+            String sql = Query.fileToString("oracle/address_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setInt(1, address.getPostalCode());
@@ -51,7 +51,7 @@ public class AddressDAOImplOracle implements AddressDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_update.sql");
+            String sql = Query.fileToString("oracle/address_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -85,7 +85,7 @@ public class AddressDAOImplOracle implements AddressDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_get_all.sql");
+            String sql = Query.fileToString("oracle/address_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -121,7 +121,7 @@ public class AddressDAOImplOracle implements AddressDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_get_one.sql");
+            String sql = Query.fileToString("oracle/address_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, addressId);
             result = stmt.executeQuery();
@@ -154,7 +154,7 @@ public class AddressDAOImplOracle implements AddressDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_delete.sql");
+            String sql = Query.fileToString("oracle/address_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -172,7 +172,7 @@ public class AddressDAOImplOracle implements AddressDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_address_last_id.sql");
+            String sql = Query.fileToString("oracle/address_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

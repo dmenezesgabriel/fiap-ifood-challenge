@@ -21,7 +21,7 @@ public class PlanDAOImplOracle implements PlanDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_register.sql");
+            String sql = Query.fileToString("oracle/plan_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, plan.getName());
@@ -49,7 +49,7 @@ public class PlanDAOImplOracle implements PlanDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_update.sql");
+            String sql = Query.fileToString("oracle/plan_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -81,7 +81,7 @@ public class PlanDAOImplOracle implements PlanDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_get_all.sql");
+            String sql = Query.fileToString("oracle/plan_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -114,7 +114,7 @@ public class PlanDAOImplOracle implements PlanDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_get_one.sql");
+            String sql = Query.fileToString("oracle/plan_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, planId);
             result = stmt.executeQuery();
@@ -145,7 +145,7 @@ public class PlanDAOImplOracle implements PlanDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_delete.sql");
+            String sql = Query.fileToString("oracle/plan_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -163,7 +163,7 @@ public class PlanDAOImplOracle implements PlanDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_plan_last_id.sql");
+            String sql = Query.fileToString("oracle/plan_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

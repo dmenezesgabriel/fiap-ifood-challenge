@@ -18,7 +18,7 @@ import com.ifood.factory.DAOFactory;
 /**
  * Servlet implementation class PlanServlet
  */
-@WebServlet(name = "getPlan", urlPatterns = { "/getplan", "/choose-plan.jsp" })
+@WebServlet(name = "getPlan", urlPatterns = { "/getplan" })
 public class PlanGetServlet extends HttpServlet {
     Logger logger = java.util.logging.Logger.getLogger(this.getClass().getName());
 
@@ -30,11 +30,10 @@ public class PlanGetServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        logger.info("Get Plans");
         PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getPlanDAO());
         List<Plan> planList = planDAO.getAll();
-        System.out.println("" + planList);
-        // request.setAttribute("plans", planList);
-        // request.getRequestDispatcher("/choose-plan.jsp").forward(request, response);
+        request.setAttribute("plans", planList);
     }
 
     /**

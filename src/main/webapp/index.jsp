@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +8,6 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
     <title>IFood</title>
   </head>
   <body>
-    <jsp:include page="/templates/menu.jsp" />
+    <h1>Hello</h1>
   </body>
 </html>

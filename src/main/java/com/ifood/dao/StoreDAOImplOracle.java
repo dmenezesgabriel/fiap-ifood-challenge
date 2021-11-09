@@ -26,7 +26,7 @@ public class StoreDAOImplOracle implements StoreDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_register.sql");
+            String sql = Query.fileToString("oracle/store_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, store.getName());
@@ -58,7 +58,7 @@ public class StoreDAOImplOracle implements StoreDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_update.sql");
+            String sql = Query.fileToString("oracle/store_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -94,7 +94,7 @@ public class StoreDAOImplOracle implements StoreDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_get_all.sql");
+            String sql = Query.fileToString("oracle/store_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -163,7 +163,7 @@ public class StoreDAOImplOracle implements StoreDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_get_one.sql");
+            String sql = Query.fileToString("oracle/store_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, storeId);
             result = stmt.executeQuery();
@@ -230,7 +230,7 @@ public class StoreDAOImplOracle implements StoreDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_delete.sql");
+            String sql = Query.fileToString("oracle/store_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -248,7 +248,7 @@ public class StoreDAOImplOracle implements StoreDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_store_last_id.sql");
+            String sql = Query.fileToString("oracle/store_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

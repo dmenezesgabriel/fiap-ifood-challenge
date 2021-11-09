@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Query {
 
     public static String fileToString(String queryFile) {
-        Path path = new File(Query.class.getResource("/scripts/database/" + queryFile).getFile()).toPath();
+        Path path = new File(Query.class.getResource("/scripts/database" + queryFile).getFile()).toPath();
         String sql = null;
         try {
             sql = Files.readString(path);

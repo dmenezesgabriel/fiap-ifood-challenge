@@ -64,3 +64,6 @@ _Me, myself and I_
 - [ ] Add setDescription to StoreTest at Entities Test
 - [ ] Make tests for each DAO method separately (They`re current together)
 - [ ] Improve servlets endpoint names
+
+- http://localhost:8383/fiap-ifood-challenge/
+- http://localhost:8080/

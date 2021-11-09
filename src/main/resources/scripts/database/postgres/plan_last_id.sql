@@ -1,0 +1,1 @@
+SELECT MAX(cd_plano) AS last_id FROM T_IFD_PLANO

@@ -21,7 +21,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_register.sql");
+            String sql = Query.fileToString("oracle/specialty_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, specialty.getName());
@@ -45,7 +45,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_update.sql");
+            String sql = Query.fileToString("oracle/specialty_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -73,7 +73,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_get_all.sql");
+            String sql = Query.fileToString("oracle/specialty_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -102,7 +102,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_get_one.sql");
+            String sql = Query.fileToString("oracle/specialty_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, specialtyId);
             result = stmt.executeQuery();
@@ -129,7 +129,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_delete.sql");
+            String sql = Query.fileToString("oracle/specialty_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -147,7 +147,7 @@ public class SpecialtyDAOImplOracle implements SpecialtyDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_specialty_last_id.sql");
+            String sql = Query.fileToString("oracle/specialty_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

@@ -12,7 +12,7 @@
       "label": "Compile",
       "type": "shell",
       "command": "mvn",
-      "args": ["clean", "package"],
+      "args": ["clean", "package", "-DskipTests"],
       "dependsOn": ["CleanTarget"],
       "problemMatcher": []
     },

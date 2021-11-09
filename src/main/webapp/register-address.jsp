@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -75,17 +74,13 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
               <option value="Natal">Natal</option>
               <option value="Campo Grande">Campo Grande</option>
               <option value="Teresina">Teresina</option>
-              <option value="São Bernardo do Campo">
-                São Bernardo do Campo
-              </option>
+              <option value="São Bernardo do Campo">São Bernardo do Campo</option>
               <option value="Nova Iguaçu">Nova Iguaçu</option>
               <option value="João Pessoa">João Pessoa</option>
               <option value="Santo André">Santo André</option>
               <option value="Osasco">Osasco</option>
               <option value="São José dos Campos">São José dos Campos</option>
-              <option value="Jaboatão dos Guararapes">
-                Jaboatão dos Guararapes
-              </option>
+              <option value="Jaboatão dos Guararapes">Jaboatão dos Guararapes</option>
               <option value="Ribeirão Preto">Ribeirão Preto</option>
               <option value="Uberlândia">Uberlândia</option>
               <option value="Contagem">Contagem</option>
@@ -100,9 +95,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
               <option value="Ananindeua">Ananindeua</option>
               <option value="Niterói">Niterói</option>
               <option value="Porto Velho">Porto Velho</option>
-              <option value="Campos dos Goytacazes">
-                Campos dos Goytacazes
-              </option>
+              <option value="Campos dos Goytacazes">Campos dos Goytacazes</option>
               <option value="Belford Roxo">Belford Roxo</option>
               <option value="Serra">Serra</option>
               <option value="Caxias do Sul">Caxias do Sul</option>
@@ -111,9 +104,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
               <option value="São João de Meriti">São João de Meriti</option>
               <option value="Mauá">Mauá</option>
               <option value="Macapá">Macapá</option>
-              <option value="São José do Rio Preto">
-                São José do Rio Preto
-              </option>
+              <option value="São José do Rio Preto">São José do Rio Preto</option>
               <option value="Santos">Santos</option>
               <option value="Mogi das Cruzes">Mogi das Cruzes</option>
               <option value="Betim">Betim</option>

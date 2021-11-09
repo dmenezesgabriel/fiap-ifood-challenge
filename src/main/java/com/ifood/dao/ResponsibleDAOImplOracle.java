@@ -21,7 +21,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_register.sql");
+            String sql = Query.fileToString("oracle/responsible_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, responsible.getName());
@@ -47,7 +47,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_update.sql");
+            String sql = Query.fileToString("oracle/responsible_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -77,7 +77,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsbile_get_all.sql");
+            String sql = Query.fileToString("oracle/responsbile_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -108,7 +108,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_get_one.sql");
+            String sql = Query.fileToString("oracle/responsible_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, responsibleId);
             result = stmt.executeQuery();
@@ -137,7 +137,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_delete.sql");
+            String sql = Query.fileToString("oracle/responsible_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -155,7 +155,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_last_id.sql");
+            String sql = Query.fileToString("oracle/responsible_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

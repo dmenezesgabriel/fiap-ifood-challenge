@@ -1,0 +1,1 @@
+SELECT MAX(cd_endereco) AS last_id FROM T_IFD_ENDERECO
