@@ -23,10 +23,6 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
             <input type="text" name="name" id="userName" />
           </div>
           <div>
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" />
-          </div>
-          <div>
             <label for="cpf">CPF</label>
             <input type="number" name="cpf" id="cpf" />
           </div>
