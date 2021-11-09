@@ -10,12 +10,16 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
   <body>
     <div class="container">
       <hr />
-      <h2>Cadastre sua loja</h2>
+      <h2>Responsável legal da loja</h2>
+      <h3>
+        Informe os dados da pessoa que tem o nome no contato social da empresa,
+        seja como dona, sócia ou sócia administrativa.
+      </h3>
 
       <form action="registercontact" method="post">
         <fieldset>
           <div>
-            <label for="userName">Nome</label>
+            <label for="userName">Nome Completo</label>
             <input type="text" name="name" id="userName" />
           </div>
           <div>
@@ -23,10 +27,14 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
             <input type="email" name="email" id="email" />
           </div>
           <div>
-            <label for="phone">Celular</label>
-            <input type="tel" required="required" maxlength="15" name="phone" />
+            <label for="cpf">CPF</label>
+            <input type="number" name="cpf" id="cpf" />
           </div>
-          <input type="submit" value="Salvar" />
+          <div>
+            <label for="rg">RG</label>
+            <input type="number" name="rg" id="rg" />
+          </div>
+          <input type="submit" value="Continuar" />
         </fieldset>
       </form>
     </div>

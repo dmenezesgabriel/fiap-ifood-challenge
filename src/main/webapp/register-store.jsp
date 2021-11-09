@@ -10,23 +10,31 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
   <body>
     <div class="container">
       <hr />
-      <h2>Cadastre sua loja</h2>
+      <h2>Informações da loja</h2>
 
       <form action="registercontact" method="post">
         <fieldset>
           <div>
-            <label for="userName">Nome</label>
-            <input type="text" name="name" id="userName" />
+            <label for="cnpj">CNPJ</label>
+            <input type="number" name="cnpj" id="cnpj" />
           </div>
           <div>
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" />
+            <label for="companyName">Razão social</label>
+            <input type="text" name="companyName" id="companyName" />
           </div>
           <div>
-            <label for="phone">Celular</label>
+            <label for="name">Nome da loja</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div>
+            <label for="phone">Telefone ou Celular da loja</label>
             <input type="tel" required="required" maxlength="15" name="phone" />
           </div>
-          <input type="submit" value="Salvar" />
+          <label for="specialty">Especialidade</label>
+          <select id="specialty">
+            <option value="Acai">Acai</option>
+          </select>
+          <input type="submit" value="Avançar" />
         </fieldset>
       </form>
     </div>

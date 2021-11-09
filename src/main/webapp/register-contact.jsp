@@ -15,7 +15,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
       <form action="registercontact" method="post">
         <fieldset>
           <div>
-            <label for="userName">Nome</label>
+            <label for="userName">Nome Completo</label>
             <input type="text" name="name" id="userName" />
           </div>
           <div>
@@ -26,7 +26,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
             <label for="phone">Celular</label>
             <input type="tel" required="required" maxlength="15" name="phone" />
           </div>
-          <input type="submit" value="Salvar" />
+          <input type="submit" value="Cadastrar agora" />
         </fieldset>
       </form>
     </div>

@@ -10,7 +10,8 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
   <body>
     <div class="container">
       <hr />
-      <h2>Cadastre sua loja</h2>
+      <h2>Endereço da loja</h2>
+      <h3>Preencha as informações de endereço de sua loja</h3>
 
       <form action="registercontact" method="post">
         <fieldset>
@@ -179,7 +180,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
             <label for="adjunct">Complemento</label>
             <input type="text" name="adjunct" id="adjunct" />
           </div>
-          <input type="submit" value="Salvar" />
+          <input type="submit" value="Continuar" />
         </fieldset>
       </form>
     </div>

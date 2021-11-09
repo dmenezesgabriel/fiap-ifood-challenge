@@ -9,10 +9,12 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
     <title>IFood</title>
   </head>
   <body>
-    <nav>
-      <jsp:include page="/register-contact.jsp">
-        <jsp:param name="title" value="This is the page title" />
-      </jsp:include>
-    </nav>
+    <jsp:include page="/register-contact.jsp">
+      <jsp:param name="title" value="This is the page title" />
+    </jsp:include>
+
+    <jsp:include page="/register-address.jsp">
+      <jsp:param name="title" value="This is the page title" />
+    </jsp:include>
   </body>
 </html>
