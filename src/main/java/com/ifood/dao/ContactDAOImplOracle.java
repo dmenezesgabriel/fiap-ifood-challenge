@@ -155,11 +155,11 @@ public class ContactDAOImplOracle implements ContactDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_seq_currval.sql");
+            String sql = Query.fileToString("oracle_contact_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {
-                id = result.getInt("CURRVAL");
+                id = result.getInt("last_id");
             }
         } catch (SQLException error) {
             error.printStackTrace();
