@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ifood.dao.ContactDAO;
-import com.ifood.dao.ContactDAOImplOracle;
 import com.ifood.entity.Contact;
+import com.ifood.factory.DAOFactory;
 
 /**
  * Servlet implementation class ContactServlet
@@ -46,9 +46,8 @@ public class ContactAddServlet extends HttpServlet {
         contact.setName(request.getParameter("name"));
         contact.setEmail(request.getParameter("email"));
         contact.setPhone(Long.parseLong(request.getParameter("phone")));
-
-        ContactDAO dao = new ContactDAOImplOracle();
-        if (dao.register(contact)) {
+        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getContactDAO());
+        if (contactDAO.register(contact)) {
             request.setAttribute("contact", contact);
             HttpSession session = request.getSession();
             session.setAttribute("contact", contact);

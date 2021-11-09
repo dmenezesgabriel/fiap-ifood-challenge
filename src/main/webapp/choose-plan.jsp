@@ -11,7 +11,9 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
     <div class="container">
       <hr />
       <h2>Escolha seu plano</h2>
-      <!-- cards -->
+      <c:forEach items="${plans}" var="plan">
+        <span>${plan.name}></span>
+      </c:forEach>
     </div>
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/jquery-3.6.0.min.js"></script>

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ifood.dao.AddressDAO;
-import com.ifood.dao.AddressDAOImplOracle;
 import com.ifood.entity.Address;
+import com.ifood.factory.DAOFactory;
 
 /**
  * Servlet implementation class AddressServlet
@@ -51,9 +51,8 @@ public class AddressAddServlet extends HttpServlet {
         address.setNumber(Integer.parseInt(request.getParameter("number")));
         address.setAdjunct(request.getParameter("adjunct"));
         logger.info(address.toString());
-        AddressDAO dao = new AddressDAOImplOracle();
-        if (dao.register(address)) {
-            request.setAttribute("address", address);
+        AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getAddressDAO());
+        if (addressDAO.register(address)) {
             HttpSession session = request.getSession();
             session.setAttribute("address", address);
         } else {

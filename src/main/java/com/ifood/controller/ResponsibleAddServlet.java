@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.ifood.dao.ResponsibleDAO;
 import com.ifood.dao.ResponsibleDAOImplOracle;
 import com.ifood.entity.Responsible;
+import com.ifood.factory.DAOFactory;
 
 /**
  * Servlet implementation class ResponsibleServlet
@@ -47,8 +48,8 @@ public class ResponsibleAddServlet extends HttpServlet {
         responsible.setCpf(Long.parseLong(request.getParameter("cpf")));
         responsible.setRg(Long.parseLong(request.getParameter("rg")));
         logger.info(responsible.toString());
-        ResponsibleDAO dao = new ResponsibleDAOImplOracle();
-        if (dao.register(responsible)) {
+        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getResponsibleDAO());
+        if (responsibleDAO.register(responsible)) {
             request.setAttribute("responsible", responsible);
             HttpSession session = request.getSession();
             session.setAttribute("responsible", responsible);
