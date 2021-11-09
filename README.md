@@ -25,6 +25,8 @@ Which are the most relevant data for the partner restaurant provide at Ifood Pla
 - Docker
 - Oracle Database 12.2.0.1-slim Docker image
 
+_Can be developed both at eclipse or vscode, to use vscode install java extension pack and tomcat for java_
+
 ## Data Model
 
 Star Schema _WANNABE_
