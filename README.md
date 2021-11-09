@@ -31,3 +31,13 @@ Star Schema _WANNABE_
 - [ ] Data Persistence (CRUD)
 - [ ] Front-end
 - [ ] 3 Insights from data
+
+## Group
+
+_Me, myself and I_
+
+## TODO
+
+- [ ] Create a Logging Factory
+- [ ] Use Mocking for tests
+- [ ] Use a in Memory database for tests?
