@@ -159,3 +159,142 @@ ALTER TABLE T_IFD_LOJA
 	ADD CONSTRAINT FK_IFD_LOJA_PLANO FOREIGN KEY (cd_plano)
 	REFERENCES T_IFD_PLANO (cd_plano)
 	ON DELETE SET NULL;
+-------------------------------------------------------------------------------
+-- DML
+-------------------------------------------------------------------------------
+INSERT INTO T_IFD_PLANO (
+  cd_plano,
+  nm_plano,
+  ds_plano,
+  vl_comissao,
+  vl_taxa,
+  vl_preco
+)
+VALUES (
+  SEQ_IFD_PLANO.NEXTVAL,
+  'Básico',
+  'Plano Básico',
+  0.12,
+  0.035,
+  100
+  );
+INSERT INTO T_IFD_PLANO (
+  cd_plano,
+  nm_plano,
+  ds_plano,
+  vl_comissao,
+  vl_taxa,
+  vl_preco
+)
+VALUES (
+  SEQ_IFD_PLANO.NEXTVAL,
+  'Entrega',
+  'Plano Entrega',
+  0.23,
+  0.035,
+  130
+  );
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Acai'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Marmita'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Bebidas'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Carnes'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Brasileira'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Lanches'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Congelados'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Pastel'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Indiana'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Arabe'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Doces'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Salgados'
+);
+INSERT INTO T_IFD_ESPECIALIDADE (
+  cd_especialidade,
+  nm_especialidade
+)
+VALUES (
+  SEQ_IFD_ESPECIALIDADE.NEXTVAL,
+  'Italiana'
+);
