@@ -106,11 +106,11 @@ public class Address implements Serializable {
         if (!(o instanceof Address)) {
             return false;
         }
-        Address address = (Address) o;
-        return id == address.id && postalCode == address.postalCode && Objects.equals(state, address.state)
-                && Objects.equals(city, address.city) && Objects.equals(district, address.district)
-                && Objects.equals(address, address.address) && number == address.number
-                && Objects.equals(adjunct, address.adjunct);
+        Address addressObj = (Address) o;
+        return id == addressObj.id && postalCode == addressObj.postalCode && Objects.equals(state, addressObj.state)
+                && Objects.equals(city, addressObj.city) && Objects.equals(district, addressObj.district)
+                && Objects.equals(address, addressObj.address) && number == addressObj.number
+                && Objects.equals(adjunct, addressObj.adjunct);
     }
 
     @Override

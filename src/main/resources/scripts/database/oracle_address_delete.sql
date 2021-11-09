@@ -1,0 +1,2 @@
+DELETE FROM T_IFD_ENDERECO
+  WHERE cd_endereco = ?
