@@ -77,7 +77,7 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_get_all.sql");
+            String sql = Query.fileToString("oracle_responsbile_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -155,11 +155,11 @@ public class ResponsibleDAOImplOracle implements ResponsibleDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_responsible_seq_currval.sql");
+            String sql = Query.fileToString("oracle_responsible_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {
-                id = result.getInt("CURRVAL");
+                id = result.getInt("last_id");
             }
         } catch (SQLException error) {
             error.printStackTrace();
