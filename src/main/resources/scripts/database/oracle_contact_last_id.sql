@@ -1,0 +1,1 @@
+SELECT MAX(cd_contato) AS last_id FROM T_IFD_CONTATO

@@ -1,0 +1,1 @@
+SELECT MAX(cd_responsavel) AS last_id FROM T_IFD_RESPONSAVEL
