@@ -26,11 +26,8 @@ public class DatabaseManager {
 
         // Get each property value.
         String dbDriverClass = props.getProperty("app.jdbc.driverClassName");
-
         String dbConnUrl = props.getProperty("app.jdbc.url");
-
         String dbUserName = props.getProperty("app.jdbc.username");
-
         String dbPassword = props.getProperty("app.jdbc.password");
 
         Connection connection = null;
