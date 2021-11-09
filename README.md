@@ -63,3 +63,4 @@ _Me, myself and I_
 - [ ] **Change** Address.address to Address.something
 - [ ] Add setDescription to StoreTest at Entities Test
 - [ ] Make tests for each DAO method separately (They`re current together)
+- [ ] Improve servlets endpoint names

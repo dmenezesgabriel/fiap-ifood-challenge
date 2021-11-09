@@ -12,7 +12,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
       <hr />
       <h2>Informações da loja</h2>
 
-      <form action="registercontact" method="post">
+      <form action="registerstore" method="post">
         <fieldset>
           <div>
             <label for="cnpj">CNPJ</label>

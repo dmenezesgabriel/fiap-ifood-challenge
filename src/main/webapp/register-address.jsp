@@ -13,7 +13,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
       <h2>Endereço da loja</h2>
       <h3>Preencha as informações de endereço de sua loja</h3>
 
-      <form action="registercontact" method="post">
+      <form action="registeraddress" method="post">
         <fieldset>
           <div>
             <label for="zip">CEP</label>
@@ -21,7 +21,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
           </div>
           <div>
             <label for="state">Estado</label>
-            <select id="state">
+            <select id="state" name="state">
               <option value="Acre">Acre</option>
               <option value="Alagoas">Alagoas</option>
               <option value="Amapá">Amapá</option>
@@ -53,7 +53,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
           </div>
           <div>
             <label for="city">Cidade</label>
-            <select id="city">
+            <select id="city" name="city">
               <option value="São Paulo">São Paulo</option>
               <option value="Rio de Janeiro">Rio de Janeiro</option>
               <option value="Salvador">Salvador</option>

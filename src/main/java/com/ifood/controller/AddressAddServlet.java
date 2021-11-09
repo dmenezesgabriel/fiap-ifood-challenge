@@ -50,7 +50,7 @@ public class AddressAddServlet extends HttpServlet {
         address.setAddress(request.getParameter("address"));
         address.setNumber(Integer.parseInt(request.getParameter("number")));
         address.setAdjunct(request.getParameter("adjunct"));
-
+        logger.info(address.toString());
         AddressDAO dao = new AddressDAOImplOracle();
         if (dao.register(address)) {
             request.setAttribute("address", address);

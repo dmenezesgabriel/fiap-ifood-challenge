@@ -16,7 +16,7 @@ pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %>
         seja como dona, sócia ou sócia administrativa.
       </h3>
 
-      <form action="registercontact" method="post">
+      <form action="registerresponsible" method="post">
         <fieldset>
           <div>
             <label for="userName">Nome Completo</label>
