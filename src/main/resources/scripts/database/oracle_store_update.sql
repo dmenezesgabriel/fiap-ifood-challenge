@@ -1,6 +1,5 @@
 UPDATE T_IFD_LOJA
-  SET nm_loja = ?
-	nm_loja = ?,
+  SET nm_loja = ?,
 	ds_razao_social = ?,
   nr_cnpj = ?,
   nr_telefone = ?,
@@ -8,5 +7,5 @@ UPDATE T_IFD_LOJA
   cd_contato = ?,
   cd_endereco = ?,
   cd_responsavel = ?,
-  cd_plano = ?,
+  cd_plano = ?
 WHERE cd_loja = ?

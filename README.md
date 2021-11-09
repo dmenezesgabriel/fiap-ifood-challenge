@@ -55,3 +55,4 @@ _Me, myself and I_
 - [ ] Use a in Memory database for tests?
 - [ ] **Change** Address.address to Address.something
 - [ ] Add setDescription to StoreTest at Entities Test
+- [ ] Make tests for each DAO method separately (They`re current together)

@@ -86,22 +86,22 @@ public class StoreDAOTest {
         boolean registered = storeDAO.register(store);
         logger.info("Registered: " + registered);
         assertTrue(registered);
-        // int lastId = storeDAO.getLastId();
-        // logger.info("LastId: " + lastId);
-        // logger.info("Testing getOne");
-        // Store storeRegistered = storeDAO.getOne(lastId);
-        // boolean correct = storeRegistered.getName().equals(store.getName());
-        // assertTrue(correct);
-        // logger.info("Testing getAll");
-        // List<Store> storeList = storeDAO.getAll();
-        // assertTrue(storeList.get(storeList.size() - 1).equals(storeRegistered));
-        // storeRegistered.setName("Brasileira");
-        // logger.info("Testing Update");
-        // storeDAO.update(storeRegistered);
-        // assertTrue(storeDAO.getOne(lastId).getName().equals("Brasileira"));
-        // logger.info("Testing Delete");
-        // storeDAO.delete(storeRegistered.getId());
-        // assertTrue(storeDAO.getOne(lastId) == null);
+        int lastId = storeDAO.getLastId();
+        logger.info("LastId: " + lastId);
+        logger.info("Testing getOne");
+        Store storeRegistered = storeDAO.getOne(lastId);
+        boolean correct = storeRegistered.getName().equals(store.getName());
+        assertTrue(correct);
+        logger.info("Testing getAll");
+        List<Store> storeList = storeDAO.getAll();
+        assertTrue(storeList.get(storeList.size() - 1).equals(storeRegistered));
+        storeRegistered.setName("Novo Nome");
+        logger.info("Testing Update");
+        storeDAO.update(storeRegistered);
+        assertTrue(storeDAO.getOne(lastId).getName().equals("Novo Nome"));
+        logger.info("Testing Delete");
+        storeDAO.delete(storeRegistered.getId());
+        assertTrue(storeDAO.getOne(lastId) == null);
 
     }
 }
