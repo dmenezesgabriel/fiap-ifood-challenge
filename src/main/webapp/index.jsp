@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="resources/css/index.css" />
   </head>
   <body>
-
+  <div class="h-100">
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid ">
+      <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="resources/img/logo.png" alt="" width="100%" height="30px" />
         </a>
@@ -36,27 +36,31 @@
         </div>
       </div>
     </nav>
-    <div class="container d-flex h-100">
-      <div class="row">
-        <div class="col">
-          <div class="card p-3 m-3">
-            <div>
-              <h3 class="card-title text-center">Cadastre sua loja</h3>
-            </div>
-            <div class="card-body">
-              <form class ="needs-validation" action="registercontact" method="post" novalidate>
-                <jsp:include page="/_includes/form-control-contact.jsp">
-                  <jsp:param name="title" value="This is the page title" />
-                </jsp:include>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-danger" type="submit">Cadastrar Agora</button>
+    <div class="bg">
+      <div class="container d-flex">
+        <div class="row">
+          <div class="col">
+            <div class="card p-3 m-3">
+              <div>
+                <h3 class="card-title text-center">Cadastre sua loja</h3>
                 </div>
-              </form>
+                <div class="card-body">
+                  <form class ="needs-validation" action="registercontact" method="post" novalidate>
+                    <jsp:include page="/_includes/form-control-contact.jsp">
+                      <jsp:param name="title" value="This is the page title" />
+                    </jsp:include>
+                    <div class="d-grid gap-2">
+                    <button class="btn btn-danger" type="submit">Cadastrar Agora</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <script src="resources/js/jquery-3.6.0.min.js"></script>
     <script src="resources/js/validate-form.js"></script>

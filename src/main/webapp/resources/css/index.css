@@ -1,8 +1,17 @@
-body {
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
   background-image: url("../img/photo-1485217988980-11786ced9454.jpg");
-  background-position-x: 100%;
-  background-position-y: 30%;
-  background-size: cover;
-  background-color: #cccccc;
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -13,7 +13,7 @@
       "type": "shell",
       "command": "mvn",
       //  "-DskipTests"
-      "args": ["clean", "package", "-DskipTests"],
+      "args": ["clean", "package"],
       "dependsOn": ["CleanTarget"],
       "problemMatcher": []
     },
