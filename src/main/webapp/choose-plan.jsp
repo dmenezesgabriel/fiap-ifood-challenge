@@ -18,17 +18,19 @@
     </div>
     <div class="container">
       <h2 class="mt-3 text-center">Escolha seu plano</h2>
-
       <div class="d-flex mt-5 justify-content-center">
         <div class="row">
-          <div class="col">
             <c:forEach items="${plans}" var="plan">
-              <div class="card p-3 m-3">
-                <h3 class="card-title text-center">${plan.name}</h3>
-                ${plan.description}>
+                <div class="col-sm"></div>
+                  <div class="card p-3 m-3">
+                    <h3 class="card-title text-center">${plan.name}</h3>
+                    ${plan.description}
+                    <p>${plan.commission}></p>
+                    <p>${plan.tax}></p>
+                    <p>R${plan.price}></p>
+                  </div>
               </div>
             </c:forEach>
-          </div>
         </div>
       </div>
     </div>

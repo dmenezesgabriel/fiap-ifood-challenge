@@ -138,7 +138,7 @@ INSERT INTO T_IFD_PLANO (
 )
 VALUES (
   'Básico',
-  'Plano Básico',
+  '<ul><li>Sua loja no app do ifood</li><li>Entrega feita pela sua loja</li><li>Vantagens do Chef: descontos e beneficios exclusivos</li></ul>',
   0.12,
   0.035,
   100.0
@@ -152,7 +152,7 @@ INSERT INTO T_IFD_PLANO (
 )
 VALUES (
   'Entrega',
-  'Plano Entrega',
+  '<ul><li>Tudo do plano básico</li><li>Entrega com parceiros iFood</li><li>Rastreio de entrega em tempo real</li></ul>',
   0.13,
   0.036,
   101.0
