@@ -1,0 +1,89 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add User</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="resources/css/global.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+          <div></div>
+          <a class="navbar-brand" href="#">
+            <img src="resources/img/logo.png" alt="" width="100%" height="30px" />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div>
+          <div class="card p-3 m-3">
+              <h3 class="card-title text-center">Editar loja</h3>
+          <div class="card-body">
+            <form class="needs-validation" action="definir" method="post" novalidate>
+              <div class="row">
+                <!-- Col -->
+                <div class="col-sm">
+                  <h3 class="text-muted">Loja</h3>
+                  <hr>
+                  <div class="has-validation mb-3">
+                    <label for="cnpj">CNPJ</label>
+                    <input class="form-control" type="number" name="cnpj" id="cnpj" required/>
+                  <div class="invalid-feedback">Campo obrigatório</div>
+                  <div class="has-validation mb-3">
+                    <label for="companyName">Razão social</label>
+                    <input class="form-control" type="text" name="companyName" id="companyName" required/>
+                  <div class="invalid-feedback">Campo obrigatório</div>
+                  <div class="has-validation mb-3">
+                    <label for="name">Nome da loja</label>
+                    <input class="form-control" type="text" name="name" id="name" required/>
+                  <div class="invalid-feedback">Campo obrigatório</div>
+                  </div>
+                  <div class="has-validation mb-3">
+                    <label for="phone">Telefone ou Celular da loja</label>
+                    <input class="form-control" type="tel" required="required" maxlength="15" name="phone" required/>
+                  <div class="invalid-feedback">Campo obrigatório</div>
+                  <div class="has-validation mb-3">
+                  <label for="specialty">Especialidade</label>
+                  <select class="form-control" id="specialty">
+                    <option value="Acai">Acai</option>
+                  </select>
+                  <div class="invalid-feedback">Campo obrigatório</div>
+                  </div>
+                </div>
+                <!-- Col -->
+                <div class="col-sm">
+                  <h3 class="text-muted">Responsável Legal</h3>
+                  <hr>
+                  <div class="has-validation mb-3">
+                    <label for="userName">Nome Completo</label>
+                    <input class="form-control" type="text" name="name" id="userName" required/>
+                    <div class="invalid-feedback">Campo obrigatório</div>
+                  </div>
+                  <div class="has-validation mb-3">
+                    <label for="cpf">CPF</label>
+                    <input class="form-control" type="number" name="cpf" id="cpf" required/>
+                    <div class="invalid-feedback">Campo obrigatório</div>
+                  </div>
+                  <div class="has-validation mb-3">
+                    <label for="rg">RG</label>
+                    <input class="form-control" type="number" name="rg" id="rg" required/>
+                    <div class="invalid-feedback">Campo obrigatório</div>
+                  </div>
+                </div>
+                  <div>
+                    <button class="btn btn-danger" type="submit">Salvar</button>
+                    <button class="btn btn-secondary" type="submit">Cancelar</button>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    <script src="resources/js/bootstrap.bundle.min.js"></script>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script src="resources/js/validate-form.js"></script>
+  </body>
+</html>
