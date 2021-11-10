@@ -12,10 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ifood.dao.SpecialtyDAO;
 import com.ifood.dao.StoreDAO;
 import com.ifood.entity.Address;
 import com.ifood.entity.Contact;
+import com.ifood.entity.Plan;
 import com.ifood.entity.Responsible;
+import com.ifood.entity.Specialty;
 import com.ifood.entity.Store;
 import com.ifood.factory.DAOFactory;
 
@@ -47,9 +50,17 @@ public class StoreAddServlet extends HttpServlet {
         System.out.println("POST - Register Store");
 
         HttpSession session = request.getSession();
+        Store store = new Store();
         Contact contact = null;
         Address address = null;
         Responsible responsible = null;
+        Plan plan = null;
+        // Ugly code for now fix this!!!
+        Specialty specialty = new Specialty();
+        SpecialtyDAO specialtyDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getSpecialtyDAO());
+        specialty.setName(request.getParameter("specialty"));
+        specialtyDAO.register(specialty);
+        Specialty specialtySelected = specialtyDAO.getOne(specialtyDAO.getLastId());
 
         // specialty
         // plan
@@ -57,30 +68,33 @@ public class StoreAddServlet extends HttpServlet {
             contact = (Contact) session.getAttribute("contact");
             address = (Address) session.getAttribute("address");
             responsible = (Responsible) session.getAttribute("responsible");
+            plan = (Plan) session.getAttribute("defaultPlan");
+
         }
         if (contact != null && address != null && responsible != null) {
-            System.out.println("CONTACCCCCCCCCCCCCCCCCT" + contact);
-            System.out.println("CONTACCCCCCCCCCCCCCCCCT" + address);
-            System.out.println("CONTACCCCCCCCCCCCCCCCCT" + responsible);
+            // Store store = new Store();
+            store.setName(request.getParameter("storeName"));
+            store.setCompanyName(request.getParameter("companyName"));
+            store.setCnpj(Long.parseLong(request.getParameter("storeCnpj")));
+            store.setPhone(Long.parseLong(request.getParameter("storePhone")));
+            store.setSpecialty(specialtySelected);
+            store.setContact(contact);
+            store.setAddress(address);
+            store.setResponsible(responsible);
+            store.setPlan(plan);
+            StoreDAO storeDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getStoreDAO());
 
+            if (storeDAO.register(store)) {
+                request.setAttribute("store", store);
+
+                session.setAttribute("store", store);
+                System.out.println("STOREEEEEE" + store);
+            } else {
+                request.setAttribute("error", "Informação invalida");
+            }
+            response.sendRedirect("admin.jsp");
         }
 
-        // Store store = new Store();
-        // store.setName(request.getParameter("storeName"));
-        // store.setEmail(request.getParameter("storeEmail"));
-        // store.setPhone(Long.parseLong(request.getParameter("storePhone")));
-
-        // StoreDAO storeDAO =
-        // (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getStoreDAO());
-
-        // if (storeDAO.register(store)) {
-        // request.setAttribute("store", store);
-
-        // session.setAttribute("store", store);
-        // } else {
-        // request.setAttribute("error", "Informação invalida");
-        // }
-        response.sendRedirect("admin.jsp");
     }
 
 }

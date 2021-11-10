@@ -21,7 +21,7 @@
   <div class="invalid-feedback">Campo obrigatório</div>
   <div class="has-validation mb-3">
     <label for="specialty">Especialidade</label>
-    <select class="form-control" id="specialty">
+    <select class="form-control" name="specialty" id="specialty">
       <option value="Acai">Acai</option>
     </select>
     <div class="invalid-feedback">Campo obrigatório</div>

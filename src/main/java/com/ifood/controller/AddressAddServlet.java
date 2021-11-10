@@ -54,6 +54,7 @@ public class AddressAddServlet extends HttpServlet {
         AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getAddressDAO());
         if (addressDAO.register(address)) {
             HttpSession session = request.getSession();
+            address = addressDAO.getOne(addressDAO.getLastId());
             session.setAttribute("address", address);
         } else {
             request.setAttribute("error", "Informação invalida");

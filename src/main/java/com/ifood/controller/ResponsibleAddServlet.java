@@ -51,6 +51,7 @@ public class ResponsibleAddServlet extends HttpServlet {
         if (responsibleDAO.register(responsible)) {
             request.setAttribute("responsible", responsible);
             HttpSession session = request.getSession();
+            responsible = responsibleDAO.getOne(responsibleDAO.getLastId());
             session.setAttribute("responsible", responsible);
         } else {
             request.setAttribute("error", "Informação invalida");

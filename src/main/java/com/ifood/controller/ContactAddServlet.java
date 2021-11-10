@@ -47,9 +47,11 @@ public class ContactAddServlet extends HttpServlet {
         contact.setEmail(request.getParameter("contactEmail"));
         contact.setPhone(Long.parseLong(request.getParameter("contactPhone")));
         ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getContactDAO());
+        System.out.print(contact);
         if (contactDAO.register(contact)) {
             request.setAttribute("contact", contact);
             HttpSession session = request.getSession();
+            contact = contactDAO.getOne(contactDAO.getLastId());
             session.setAttribute("contact", contact);
         } else {
             request.setAttribute("error", "Informação invalida");
