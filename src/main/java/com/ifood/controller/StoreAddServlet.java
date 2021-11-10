@@ -92,7 +92,7 @@ public class StoreAddServlet extends HttpServlet {
             } else {
                 request.setAttribute("error", "Informação invalida");
             }
-            response.sendRedirect("admin.jsp");
+            response.sendRedirect("/fiap-ifood-challenge/" + "getstore");
         }
 
     }

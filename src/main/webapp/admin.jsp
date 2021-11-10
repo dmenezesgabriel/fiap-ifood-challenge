@@ -1,4 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@ page isELIgnored="false" %> -->
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"
+%> <%@ page isELIgnored="false" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,12 +33,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>name</td>
-                <td><a href="">update</a></td>
-                <td><a href="">delete</a></td>
-              </tr>
+              <c:forEach items="${stores}" var="store">
+                <tr>
+                  <th scope="row">1</th>
+                  <td>${store.name}</td>
+                  <td><a href="">update</a></td>
+                  <td><a href="">delete</a></td>
+                </tr>
+              </c:forEach>
             </tbody>
           </table>
         </div>
