@@ -27,10 +27,10 @@
           <div class="col">
           <div class="card p-3 m-3">
               <h3 class="card-title text-center">Responsável legal da loja</h3>
-              <h6s class="card-subtitle mb-2 text-muted">
+              <h6 class="card-subtitle mb-2 text-muted">
                 <p>Informe os dados da pessoa que tem o nome no contato social da empresa, </p>
                 <p>seja como dona, sócia ou sócia administrativa.</p>
-              </h6s>
+              </h6>
           <div class="card-body">
             <form class="needs-validation" action="registerresponsible" method="post" novalidate>
                 <div class="has-validation mb-3">
