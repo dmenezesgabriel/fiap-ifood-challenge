@@ -15,6 +15,3 @@
   <input class="form-control" type="tel" required="required" maxlength="15" name="phone" placeholder="(00) 00000-0000" required />
   <div class="invalid-feedback">Campo obrigatório</div>
 </div>
-<div class="d-grid gap-2">
-  <button class="btn btn-danger" type="submit">Cadastrar Agora</button>
-</div>

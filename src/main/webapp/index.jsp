@@ -48,6 +48,9 @@
                 <jsp:include page="/_includes/form-control-contact.jsp">
                   <jsp:param name="title" value="This is the page title" />
                 </jsp:include>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-danger" type="submit">Cadastrar Agora</button>
+                </div>
               </form>
             </div>
           </div>

@@ -26,24 +26,9 @@
               </h6>
           <div class="card-body">
             <form class="needs-validation" action="registerresponsible" method="post" novalidate>
-                <div class="has-validation mb-3">
-                  <label for="userName">Nome Completo</label>
-                  <input class="form-control" type="text" name="name" id="userName" required/>
-                  <div class="invalid-feedback">Campo obrigatório</div>
-
-                </div>
-                <div class="has-validation mb-3">
-                  <label for="cpf">CPF</label>
-                  <input class="form-control" type="number" name="cpf" id="cpf" required/>
-                  <div class="invalid-feedback">Campo obrigatório</div>
-
-                </div>
-                <div class="has-validation mb-3">
-                  <label for="rg">RG</label>
-                  <input class="form-control" type="number" name="rg" id="rg" required/>
-                  <div class="invalid-feedback">Campo obrigatório</div>
-
-                </div>
+                <jsp:include page="/_includes/form-control-responsible.jsp" >
+                    <jsp:param name="title" value="This is the page title"/>
+                </jsp:include>
                 <div class="d-grid gap-2">
                   <button class="btn btn-danger" type="submit">Continuar</button>
                 </div>
