@@ -8,16 +8,9 @@
     <link rel="stylesheet" href="resources/css/global.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center">
-          <div></div>
-          <a class="navbar-brand" href="#">
-            <img src="resources/img/logo.png" alt="" width="100%" height="30px" />
-          </a>
-        </div>
-      </div>
-    </nav>
+  <jsp:include page="/_includes/header.jsp" >
+      <jsp:param name="title" value="This is the page title"/>
+  </jsp:include>
     <div class="container">
       <div>
           <div class="card p-3 m-3">

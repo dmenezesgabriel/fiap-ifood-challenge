@@ -8,16 +8,9 @@
     <link rel="stylesheet" href="resources/css/global.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center">
-          <div></div>
-          <a class="navbar-brand" href="#">
-            <img src="resources/img/logo.png" alt="" width="100%" height="30px" />
-          </a>
-        </div>
-      </div>
-    </nav>
+    <jsp:include page="/_includes/header.jsp" >
+        <jsp:param name="title" value="This is the page title"/>
+    </jsp:include>
     <div class="progress">
       <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
