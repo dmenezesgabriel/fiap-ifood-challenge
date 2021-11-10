@@ -50,13 +50,19 @@ public class StoreAddServlet extends HttpServlet {
         Contact contact = null;
         Address address = null;
         Responsible responsible = null;
+
+        // specialty
+        // plan
         if (session != null) {
             contact = (Contact) session.getAttribute("contact");
             address = (Address) session.getAttribute("address");
             responsible = (Responsible) session.getAttribute("responsible");
         }
-        if (contact != null) {
+        if (contact != null && address != null && responsible != null) {
             System.out.println("CONTACCCCCCCCCCCCCCCCCT" + contact);
+            System.out.println("CONTACCCCCCCCCCCCCCCCCT" + address);
+            System.out.println("CONTACCCCCCCCCCCCCCCCCT" + responsible);
+
         }
 
         // Store store = new Store();
