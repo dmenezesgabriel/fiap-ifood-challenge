@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Add User</title>
+    <title>iFood- Editar informaçõess da Loja</title>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
     <link rel="stylesheet" href="resources/css/global.css" />
   </head>

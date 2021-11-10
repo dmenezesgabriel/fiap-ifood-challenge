@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>ifood - Parceiros</title>
+    <title>iFood - Parceiros</title>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
     <link rel="stylesheet" href="resources/css/index.css" />
   </head>

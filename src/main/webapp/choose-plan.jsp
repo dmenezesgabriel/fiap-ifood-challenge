@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Add User</title>
+    <title>iFood - Escolha seu plano</title>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
     <link rel="stylesheet" href="resources/css/global.css" />
   </head>
@@ -25,9 +25,9 @@
                   <div class="card p-3 m-3">
                     <h3 class="card-title text-center">${plan.name}</h3>
                     ${plan.description}
-                    <p>${plan.commission}></p>
-                    <p>${plan.tax}></p>
-                    <p>R${plan.price}></p>
+                    <p><span>${plan.commission * 100}</span></p>
+                    <p><span>${plan.tax * 100}</span></p>
+                    <p>R$<span>plan.price</span></p>
                   </div>
               </div>
             </c:forEach>
