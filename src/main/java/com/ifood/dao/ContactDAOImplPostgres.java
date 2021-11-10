@@ -12,7 +12,7 @@ import com.ifood.entity.Contact;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
 
-public class ContactDAOImplOracle implements ContactDAO {
+public class ContactDAOImplPostgres implements ContactDAO {
     private Connection connection;
 
     @Override
@@ -21,7 +21,7 @@ public class ContactDAOImplOracle implements ContactDAO {
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_register.sql");
+            String sql = Query.fileToString("/postgres/contact_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
             stmt.setString(1, contact.getName());
@@ -47,7 +47,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_update.sql");
+            String sql = Query.fileToString("/postgres/contact_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
@@ -77,7 +77,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_all.sql");
+            String sql = Query.fileToString("/postgres/contact_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
@@ -108,7 +108,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_one.sql");
+            String sql = Query.fileToString("/postgres/contact_get_one.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, contactId);
             result = stmt.executeQuery();
@@ -137,7 +137,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_delete.sql");
+            String sql = Query.fileToString("/postgres/contact_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -155,7 +155,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_last_id.sql");
+            String sql = Query.fileToString("/postgres/contact_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

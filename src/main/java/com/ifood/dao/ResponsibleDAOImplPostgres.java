@@ -8,25 +8,25 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.ifood.entity.Contact;
+import com.ifood.entity.Responsible;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
 
-public class ContactDAOImplOracle implements ContactDAO {
+public class ResponsibleDAOImplPostgres implements ResponsibleDAO {
     private Connection connection;
 
     @Override
-    public boolean register(Contact contact) {
+    public boolean register(Responsible responsible) {
         PreparedStatement stmt = null;
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_register.sql");
+            String sql = Query.fileToString("/postgres/responsible_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
+            stmt.setString(1, responsible.getName());
+            stmt.setLong(2, responsible.getCpf());
+            stmt.setLong(3, responsible.getRg());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -43,18 +43,18 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public boolean update(Contact contact) {
+    public boolean update(Responsible responsible) {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_update.sql");
+            String sql = Query.fileToString("/postgres/responsible_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
-            stmt.setInt(4, contact.getId());
+            stmt.setString(1, responsible.getName());
+            stmt.setLong(2, responsible.getCpf());
+            stmt.setLong(3, responsible.getRg());
+            stmt.setInt(4, responsible.getId());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -71,22 +71,22 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public List<Contact> getAll() {
-        List<Contact> contactList = new ArrayList<Contact>();
+    public List<Responsible> getAll() {
+        List<Responsible> responsibleList = new ArrayList<Responsible>();
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_all.sql");
+            String sql = Query.fileToString("/postgres/responsbile_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                Contact contact = new Contact(id, name, email, phone);
-                contactList.add(contact);
+                int id = result.getInt("cd_responsavel");
+                String name = result.getString("nm_responsavel");
+                long cpf = result.getLong("nr_cpf");
+                long rg = result.getLong("nr_rg");
+                Responsible responsible = new Responsible(id, name, cpf, rg);
+                responsibleList.add(responsible);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -98,26 +98,26 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contactList;
+        return responsibleList;
     }
 
     @Override
-    public Contact getOne(int contactId) {
-        Contact contact = null;
+    public Responsible getOne(int responsibleId) {
+        Responsible responsible = null;
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_one.sql");
+            String sql = Query.fileToString("/postgres/responsible_get_one.sql");
             stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, contactId);
+            stmt.setInt(1, responsibleId);
             result = stmt.executeQuery();
             if (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                contact = new Contact(id, name, email, phone);
+                int id = result.getInt("cd_responsavel");
+                String name = result.getString("nm_responsavel");
+                long cpf = result.getLong("nr_cpf");
+                long rg = result.getLong("nr_rg");
+                responsible = new Responsible(id, name, cpf, rg);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -129,7 +129,7 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contact;
+        return responsible;
     }
 
     @Override
@@ -137,7 +137,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_delete.sql");
+            String sql = Query.fileToString("/postgres/responsible_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -155,7 +155,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_last_id.sql");
+            String sql = Query.fileToString("/postgres/responsible_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

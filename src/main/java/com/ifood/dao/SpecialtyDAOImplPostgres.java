@@ -8,25 +8,23 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.ifood.entity.Contact;
+import com.ifood.entity.Specialty;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
 
-public class ContactDAOImplOracle implements ContactDAO {
+public class SpecialtyDAOImplPostgres implements SpecialtyDAO {
     private Connection connection;
 
     @Override
-    public boolean register(Contact contact) {
+    public boolean register(Specialty specialty) {
         PreparedStatement stmt = null;
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_register.sql");
+            String sql = Query.fileToString("/postgres/specialty_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
+            stmt.setString(1, specialty.getName());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -43,18 +41,16 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public boolean update(Contact contact) {
+    public boolean update(Specialty specialty) {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_update.sql");
+            String sql = Query.fileToString("/postgres/specialty_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
-            stmt.setInt(4, contact.getId());
+            stmt.setString(1, specialty.getName());
+            stmt.setInt(2, specialty.getId());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -71,22 +67,20 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public List<Contact> getAll() {
-        List<Contact> contactList = new ArrayList<Contact>();
+    public List<Specialty> getAll() {
+        List<Specialty> specialtyList = new ArrayList<Specialty>();
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_all.sql");
+            String sql = Query.fileToString("/postgres/specialty_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                Contact contact = new Contact(id, name, email, phone);
-                contactList.add(contact);
+                int id = result.getInt("cd_especialidade");
+                String name = result.getString("nm_especialidade");
+                Specialty specialty = new Specialty(id, name);
+                specialtyList.add(specialty);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -98,26 +92,24 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contactList;
+        return specialtyList;
     }
 
     @Override
-    public Contact getOne(int contactId) {
-        Contact contact = null;
+    public Specialty getOne(int specialtyId) {
+        Specialty specialty = null;
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_one.sql");
+            String sql = Query.fileToString("/postgres/specialty_get_one.sql");
             stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, contactId);
+            stmt.setInt(1, specialtyId);
             result = stmt.executeQuery();
             if (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                contact = new Contact(id, name, email, phone);
+                int id = result.getInt("cd_especialidade");
+                String name = result.getString("nm_especialidade");
+                specialty = new Specialty(id, name);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -129,7 +121,7 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contact;
+        return specialty;
     }
 
     @Override
@@ -137,7 +129,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_delete.sql");
+            String sql = Query.fileToString("/postgres/specialty_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -155,7 +147,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_last_id.sql");
+            String sql = Query.fileToString("/postgres/specialty_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

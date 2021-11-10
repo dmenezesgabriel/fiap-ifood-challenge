@@ -46,7 +46,7 @@ public class ContactAddServlet extends HttpServlet {
         contact.setName(request.getParameter("name"));
         contact.setEmail(request.getParameter("email"));
         contact.setPhone(Long.parseLong(request.getParameter("phone")));
-        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getContactDAO());
+        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getContactDAO());
         if (contactDAO.register(contact)) {
             request.setAttribute("contact", contact);
             HttpSession session = request.getSession();

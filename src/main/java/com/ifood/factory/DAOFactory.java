@@ -10,7 +10,9 @@ import com.ifood.dao.ResponsibleDAO;
 public abstract class DAOFactory {
 
     public static final int ORACLE = 1;
+    public static final int POSTGRES = 2;
     private static DAOFactory oracleDAOFactory;
+    private static DAOFactory postgresDAOFactory;
 
     public static DAOFactory getDAOFactory(int database) {
         switch (database) {
@@ -20,6 +22,13 @@ public abstract class DAOFactory {
                 return oracleDAOFactory;
             } else {
                 return oracleDAOFactory;
+            }
+        case POSTGRES:
+            if (postgresDAOFactory == null) {
+                postgresDAOFactory = new DAOFactoryPostgres();
+                return postgresDAOFactory;
+            } else {
+                return postgresDAOFactory;
             }
         default:
             return null;

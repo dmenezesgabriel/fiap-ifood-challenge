@@ -15,7 +15,7 @@ public class SpecialtyDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Speciality DAO Class");
-        SpecialtyDAO specialtyDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getSpecialtyDAO());
+        SpecialtyDAO specialtyDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getSpecialtyDAO());
         Specialty specialty = new Specialty();
         specialty.setName("Marmita");
         logger.info("Testing Register");

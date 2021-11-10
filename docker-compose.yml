@@ -2,17 +2,23 @@ version: "3"
 services:
   tomcat-server:
     build: .
-    depends_on:
-      - postgres
     ports:
       - "8383:8080"
     volumes:
       - ./m2_data:/root/.m2/
+    depends_on:
+      - postgres
+    environment:
+      DRIVER_CLASS_NAME: org.postgresql.Driver
+      DB_URL: jdbc:postgresql://localhost:5432/postgres
+      DB_USER: postgres
+      DB_PASSWORD: postgres
 
   postgres:
     image: postgres:14.0-alpine
     volumes:
       - ./postgres_data:/var/lib/postgresql/data/
+      - ./migrations//postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
     environment:

@@ -20,12 +20,12 @@ public class StoreDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Speciality DAO Class");
-        StoreDAO storeDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getStoreDAO());
-        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getContactDAO());
-        AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getAddressDAO());
-        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getResponsibleDAO());
-        SpecialtyDAO specialtyDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getSpecialtyDAO());
-        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getPlanDAO());
+        StoreDAO storeDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getStoreDAO());
+        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getContactDAO());
+        AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getAddressDAO());
+        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getResponsibleDAO());
+        SpecialtyDAO specialtyDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getSpecialtyDAO());
+        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getPlanDAO());
 
         // Contact Instance
         Contact contact = new Contact();
@@ -75,7 +75,7 @@ public class StoreDAOTest {
         store.setName("Marmitas do Gabriel");
         store.setCompanyName("Gabriel Alimentos LTDA");
         store.setCnpj(12123123123412L);
-        store.setPhone(1198765432);
+        store.setPhone(11987654321L);
         store.setSpecialty(specialtyRegistered);
         store.setContact(contactRegistered);
         store.setAddress(addressRegistered);

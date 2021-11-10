@@ -15,7 +15,7 @@ public class PlanDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Speciality DAO Class");
-        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getPlanDAO());
+        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getPlanDAO());
         Plan plan = new Plan();
         plan.setName("Básico");
         plan.setDescription("<h1>Hello</h1>");

@@ -48,7 +48,7 @@ public class ResponsibleAddServlet extends HttpServlet {
         responsible.setCpf(Long.parseLong(request.getParameter("cpf")));
         responsible.setRg(Long.parseLong(request.getParameter("rg")));
         logger.info(responsible.toString());
-        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getResponsibleDAO());
+        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getResponsibleDAO());
         if (responsibleDAO.register(responsible)) {
             request.setAttribute("responsible", responsible);
             HttpSession session = request.getSession();

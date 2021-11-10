@@ -15,7 +15,7 @@ public class ContactDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Contact DAO Class");
-        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getContactDAO());
+        ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getContactDAO());
         Contact contact = new Contact();
         contact.setName("Gabriel");
         contact.setEmail("example@example.com");
@@ -37,7 +37,11 @@ public class ContactDAOTest {
         contactRegistered.setEmail("replace@example.com");
         contactRegistered.setPhone(11123456789L);
         logger.info("Testing Update");
-        contactDAO.update(contactRegistered);
+        try {
+            contactDAO.update(contactRegistered);
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
         assertTrue(contactDAO.getOne(lastId).getName().equals("José"));
         logger.info("Testing Delete");
         contactDAO.delete(contactRegistered.getId());

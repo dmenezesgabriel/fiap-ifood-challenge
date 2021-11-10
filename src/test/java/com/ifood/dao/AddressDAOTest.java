@@ -15,7 +15,7 @@ public class AddressDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Speciality DAO Class");
-        AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getAddressDAO());
+        AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getAddressDAO());
         Address address = new Address();
         address.setPostalCode(01212010);
         address.setState("São Paulo");

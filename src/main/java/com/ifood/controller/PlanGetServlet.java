@@ -31,7 +31,7 @@ public class PlanGetServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         logger.info("Get Plans");
-        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getPlanDAO());
+        PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getPlanDAO());
         List<Plan> planList = planDAO.getAll();
         request.setAttribute("plans", planList);
     }

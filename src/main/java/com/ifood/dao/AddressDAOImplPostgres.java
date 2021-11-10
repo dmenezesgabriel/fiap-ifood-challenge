@@ -8,25 +8,29 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.ifood.entity.Contact;
+import com.ifood.entity.Address;
 import com.ifood.jdbc.ConnectionManager;
 import com.ifood.util.Query;
 
-public class ContactDAOImplOracle implements ContactDAO {
+public class AddressDAOImplPostgres implements AddressDAO {
     private Connection connection;
 
     @Override
-    public boolean register(Contact contact) {
+    public boolean register(Address address) {
         PreparedStatement stmt = null;
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_register.sql");
+            String sql = Query.fileToString("/postgres/address_register.sql");
             stmt = (connection.prepareStatement(sql));
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
+            stmt.setInt(1, address.getPostalCode());
+            stmt.setString(2, address.getState());
+            stmt.setString(3, address.getCity());
+            stmt.setString(4, address.getDistrict());
+            stmt.setString(5, address.getAddress());
+            stmt.setInt(6, address.getNumber());
+            stmt.setString(7, address.getAdjunct());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -43,18 +47,22 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public boolean update(Contact contact) {
+    public boolean update(Address address) {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_update.sql");
+            String sql = Query.fileToString("/postgres/address_update.sql");
             stmt = (connection.prepareStatement(sql));
 
             // Set values
-            stmt.setString(1, contact.getName());
-            stmt.setString(2, contact.getEmail());
-            stmt.setLong(3, contact.getPhone());
-            stmt.setInt(4, contact.getId());
+            stmt.setInt(1, address.getPostalCode());
+            stmt.setString(2, address.getState());
+            stmt.setString(3, address.getCity());
+            stmt.setString(4, address.getDistrict());
+            stmt.setString(5, address.getAddress());
+            stmt.setInt(6, address.getNumber());
+            stmt.setString(7, address.getAdjunct());
+            stmt.setInt(8, address.getId());
             stmt.executeUpdate();
             return true;
         } catch (SQLException error) {
@@ -71,22 +79,27 @@ public class ContactDAOImplOracle implements ContactDAO {
     }
 
     @Override
-    public List<Contact> getAll() {
-        List<Contact> contactList = new ArrayList<Contact>();
+    public List<Address> getAll() {
+        List<Address> addressList = new ArrayList<Address>();
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_all.sql");
+            String sql = Query.fileToString("/postgres/address_get_all.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             while (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                Contact contact = new Contact(id, name, email, phone);
-                contactList.add(contact);
+                int id = result.getInt("cd_endereco");
+                int postalCode = result.getInt("cd_cep");
+                String state = result.getString("nm_estado");
+                String city = result.getString("nm_cidade");
+                String district = result.getString("nm_bairro");
+                String description = result.getString("ds_endereco");
+                int number = result.getInt("nr_numero");
+                String adjunct = result.getString("ds_complemento");
+
+                Address address = new Address(id, postalCode, state, city, district, description, number, adjunct);
+                addressList.add(address);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -98,26 +111,30 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contactList;
+        return addressList;
     }
 
     @Override
-    public Contact getOne(int contactId) {
-        Contact contact = null;
+    public Address getOne(int addressId) {
+        Address address = null;
         PreparedStatement stmt = null;
         ResultSet result = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_get_one.sql");
+            String sql = Query.fileToString("/postgres/address_get_one.sql");
             stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, contactId);
+            stmt.setInt(1, addressId);
             result = stmt.executeQuery();
             if (result.next()) {
-                int id = result.getInt("cd_contato");
-                String name = result.getString("nm_contato");
-                String email = result.getString("ds_email");
-                long phone = result.getLong("nr_celular");
-                contact = new Contact(id, name, email, phone);
+                int id = result.getInt("cd_endereco");
+                int postalCode = result.getInt("cd_cep");
+                String state = result.getString("nm_estado");
+                String city = result.getString("nm_cidade");
+                String district = result.getString("nm_bairro");
+                String description = result.getString("ds_endereco");
+                int number = result.getInt("nr_numero");
+                String adjunct = result.getString("ds_complemento");
+                address = new Address(id, postalCode, state, city, district, description, number, adjunct);
             }
         } catch (SQLException error) {
             error.printStackTrace();
@@ -129,7 +146,7 @@ public class ContactDAOImplOracle implements ContactDAO {
                 error.printStackTrace();
             }
         }
-        return contact;
+        return address;
     }
 
     @Override
@@ -137,7 +154,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         PreparedStatement stmt = null;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_delete.sql");
+            String sql = Query.fileToString("/postgres/address_delete.sql");
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -155,7 +172,7 @@ public class ContactDAOImplOracle implements ContactDAO {
         int id = 0;
         try {
             connection = ConnectionManager.getInstance().getConnection();
-            String sql = Query.fileToString("oracle_contact_last_id.sql");
+            String sql = Query.fileToString("/postgres/address_last_id.sql");
             stmt = connection.prepareStatement(sql);
             result = stmt.executeQuery();
             if (result.next()) {

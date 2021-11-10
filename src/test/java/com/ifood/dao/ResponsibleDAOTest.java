@@ -15,7 +15,7 @@ public class ResponsibleDAOTest {
     @Test
     public void shouldAnswerWithTrue() {
         logger.info("Testing Responsible DAO Class");
-        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.ORACLE).getResponsibleDAO());
+        ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getResponsibleDAO());
         Responsible responsible = new Responsible();
         responsible.setName("João");
         responsible.setCpf(9879879898L);
