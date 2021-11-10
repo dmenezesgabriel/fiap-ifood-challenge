@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
@@ -34,6 +35,8 @@ public class PlanGetServlet extends HttpServlet {
         PlanDAO planDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getPlanDAO());
         List<Plan> planList = planDAO.getAll();
         request.setAttribute("plans", planList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("choose-plan.jsp");
+        dispatcher.forward(request, response);
     }
 
     /**

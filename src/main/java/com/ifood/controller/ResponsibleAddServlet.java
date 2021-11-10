@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ifood.dao.ResponsibleDAO;
-import com.ifood.dao.ResponsibleDAOImplOracle;
 import com.ifood.entity.Responsible;
 import com.ifood.factory.DAOFactory;
 
