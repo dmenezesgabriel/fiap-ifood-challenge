@@ -54,8 +54,7 @@ public class ContactAddServlet extends HttpServlet {
         } else {
             request.setAttribute("error", "Informação invalida");
         }
-
-        // response.sendRedirect("listcontacts");
+        response.sendRedirect("register-address.jsp");
     }
 
 }

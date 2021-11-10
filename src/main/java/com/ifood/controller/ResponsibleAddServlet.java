@@ -56,7 +56,7 @@ public class ResponsibleAddServlet extends HttpServlet {
             request.setAttribute("error", "Informação invalida");
         }
 
-        // response.sendRedirect("listresponsibles");
+        response.sendRedirect("/fiap-ifood-challenge/" + "getplan");
     }
 
 }

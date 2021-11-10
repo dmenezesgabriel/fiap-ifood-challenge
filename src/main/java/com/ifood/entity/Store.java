@@ -10,6 +10,7 @@ import java.util.Objects;
  * @version 1.0
  */
 public class Store implements Serializable {
+    private static final long serialVersionUID = 1L;
     protected int id;
     protected String name;
     protected String companyName;

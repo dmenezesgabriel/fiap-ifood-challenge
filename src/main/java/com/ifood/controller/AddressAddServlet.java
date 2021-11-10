@@ -59,7 +59,7 @@ public class AddressAddServlet extends HttpServlet {
             request.setAttribute("error", "Informação invalida");
         }
 
-        // response.sendRedirect("listaddresss");
+        response.sendRedirect("register-responsible.jsp");
     }
 
 }
