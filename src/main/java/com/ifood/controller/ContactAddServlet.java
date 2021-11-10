@@ -43,9 +43,9 @@ public class ContactAddServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("POST - Register Contact");
         Contact contact = new Contact();
-        contact.setName(request.getParameter("name"));
-        contact.setEmail(request.getParameter("email"));
-        contact.setPhone(Long.parseLong(request.getParameter("phone")));
+        contact.setName(request.getParameter("contactName"));
+        contact.setEmail(request.getParameter("contactEmail"));
+        contact.setPhone(Long.parseLong(request.getParameter("contactPhone")));
         ContactDAO contactDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getContactDAO());
         if (contactDAO.register(contact)) {
             request.setAttribute("contact", contact);

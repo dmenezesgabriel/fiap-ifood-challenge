@@ -43,9 +43,9 @@ public class ResponsibleAddServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("POST - Register Responsible");
         Responsible responsible = new Responsible();
-        responsible.setName(request.getParameter("name"));
-        responsible.setCpf(Long.parseLong(request.getParameter("cpf")));
-        responsible.setRg(Long.parseLong(request.getParameter("rg")));
+        responsible.setName(request.getParameter("responsibleName"));
+        responsible.setCpf(Long.parseLong(request.getParameter("responsibleCpf")));
+        responsible.setRg(Long.parseLong(request.getParameter("responsibleRg")));
         logger.info(responsible.toString());
         ResponsibleDAO responsibleDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getResponsibleDAO());
         if (responsibleDAO.register(responsible)) {

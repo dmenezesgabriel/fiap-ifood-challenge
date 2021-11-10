@@ -2,7 +2,7 @@
 %> <%@ page isELIgnored="false" %> -->
 <div class="has-validation mb-3">
   <label for="cnpj">CNPJ</label>
-  <input class="form-control" type="number" name="cnpj" id="cnpj" required />
+  <input class="form-control" type="number" name="storeCnpj" id="cnpj" maxlength="14" required />
   <div class="invalid-feedback">Campo obrigatório</div>
 </div>
 <div class="has-validation mb-3">
@@ -12,12 +12,12 @@
 </div>
 <div class="has-validation mb-3">
   <label for="name">Nome da loja</label>
-  <input class="form-control" type="text" name="name" id="name" required />
+  <input class="form-control" type="text" name="storeName" id="name" required />
   <div class="invalid-feedback">Campo obrigatório</div>
 </div>
 <div class="has-validation mb-3">
   <label for="phone">Telefone ou Celular da loja</label>
-  <input class="form-control" type="tel" required="required" maxlength="15" name="phone" required />
+  <input class="form-control" type="tel" required="required" maxlength="15" name="storePhone" required />
   <div class="invalid-feedback">Campo obrigatório</div>
   <div class="has-validation mb-3">
     <label for="specialty">Especialidade</label>

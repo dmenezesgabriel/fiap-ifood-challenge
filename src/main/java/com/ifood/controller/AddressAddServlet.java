@@ -48,7 +48,7 @@ public class AddressAddServlet extends HttpServlet {
         address.setCity(request.getParameter("city"));
         address.setDistrict(request.getParameter("district"));
         address.setAddress(request.getParameter("address"));
-        address.setNumber(Integer.parseInt(request.getParameter("number")));
+        address.setNumber(Integer.parseInt(request.getParameter("addressNumber")));
         address.setAdjunct(request.getParameter("adjunct"));
         logger.info(address.toString());
         AddressDAO addressDAO = (DAOFactory.getDAOFactory(DAOFactory.POSTGRES).getAddressDAO());

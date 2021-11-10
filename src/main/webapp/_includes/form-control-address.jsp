@@ -2,7 +2,7 @@
 %> <%@ page isELIgnored="false" %> -->
 <div class="has-validation mb-3">
   <label for="zip">CEP</label>
-  <input class="form-control" id="zip" name="zip" type="number" inputmode="numeric" required />
+  <input class="form-control" id="zip" name="zip" type="number" inputmode="numeric" maxlength="9" required />
   <div class="invalid-feedback">Campo obrigatório</div>
 </div>
 <div class="has-validation mb-3">
@@ -39,7 +39,7 @@
 </div>
 <div class="has-validation mb-3">
   <label for="number">Número</label>
-  <input class="form-control" type="number" name="number" id="number" required />
+  <input class="form-control" type="number" name="addressNumber" maxlength="5" id="number" required />
   <div class="invalid-feedback">Campo obrigatório</div>
 </div>
 <div class="has-validation mb-3">
