@@ -33,7 +33,8 @@
                 <form class="needs-validation" action="registeraddress" method="post" novalidate>
                   <div class="has-validation mb-3">
                     <label for="zip">CEP</label>
-                    <input class="form-control" id="zip" name="zip" type="text" inputmode="numeric" />
+                    <input class="form-control" id="zip" name="zip" type="text" inputmode="numeric" required />
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="state">Estado</label>
@@ -66,10 +67,11 @@
                       <option value="Tocantins">Tocantins</option>
                       <option value="Distrito Federal">Distrito Federal</option>
                     </select>
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="city">Cidade</label>
-                    <select class="form-select" id="city" name="city">
+                    <select class="form-select" id="city" name="city" required>
                       <option value="São Paulo">São Paulo</option>
                       <option value="Rio de Janeiro">Rio de Janeiro</option>
                       <option value="Salvador">Salvador</option>
@@ -171,22 +173,27 @@
                       <option value="Várzea Grande">Várzea Grande</option>
                       <option value="Palmas">Palmas</option>
                     </select>
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="address">Endereço</label>
-                    <input class="form-control" type="text" name="address" id="address" />
+                    <input class="form-control" type="text" name="address" id="address" required />
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="district">Bairro</label>
-                    <input class="form-control" type="text" name="district" id="district" />
+                    <input class="form-control" type="text" name="district" id="district" required />
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="number">Número</label>
-                    <input class="form-control" type="number" name="number" id="number" />
+                    <input class="form-control" type="number" name="number" id="number" required />
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="has-validation mb-3">
                     <label for="adjunct">Complemento</label>
-                    <input class="form-control" type="text" name="adjunct" id="adjunct" />
+                    <input class="form-control" type="text" name="adjunct" id="adjunct" required />
+                    <div class="invalid-feedback">Campo obrigatório</div>
                   </div>
                   <div class="d-grid gap-2">
                     <button class="btn btn-danger" type="submit">Continuar</button>
