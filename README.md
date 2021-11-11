@@ -16,14 +16,13 @@ Which are the most relevant data for the partner restaurant provide at Ifood Pla
 - EL
 - Java
 - Servlets
-- SGDB Oracle
+- SGDB Postgres
 
 ## Requirements
 
 - **Tomcat** _9.0.54_ (versions 10.x and above use Jakarta Servlet API instead of Javax)
 - Java **JDK** 17
 - Docker
-- Oracle Database 12.2.0.1-slim Docker image
 
 _Can be developed both at eclipse or vscode, to use vscode install java extension pack and tomcat for java_
 
@@ -46,10 +45,10 @@ Star Schema _WANNABE_
 
 - [x] Understanding of Business Model
 - [x] Data Modeling
-- [ ] Data Persistence (CRUD)
-- [ ] Front-end
-- [ ] 3 Insights from data
-- [ ] Pitch
+- [x] Data Persistence (CRUD)
+- [x] Front-end
+- [x] 3 Insights from data
+- [x] Pitch
 
 ## Group
 
